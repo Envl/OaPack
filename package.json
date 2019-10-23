@@ -1,0 +1,23 @@
+{
+  "name": "oapack",
+  "version": "1.0.0",
+  "description": "A compound of frequently used utilities in js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Envl/OaPack.git"
+  },
+  "keywords": [
+    "react",
+    "js"
+  ],
+  "author": "GnimOay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Envl/OaPack/issues"
+  },
+  "homepage": "https://github.com/Envl/OaPack#readme"
+}
