@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import PropTypes from 'prop-types'
-import './_DropDown.scss'
-import {Triangle} from './Icons'
+
 const DropDown = props => {
   const [isOpen, setIsOpen] = useState(props.isOpen ? true : false)
 
@@ -14,6 +13,12 @@ const DropDown = props => {
   }
 
   useEffect(() => {
+    if (!document.head.querySelector('#fa-script')) {
+      const script = document.createElement('script')
+      script.src = 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
+      script.id = 'fa-script'
+      document.head.appendChild(script)
+    }
     if (!props.noPop) {
       document.addEventListener('mousedown', handleClickOutside)
       return () => document.removeEventListener('mousedown', handleClickOutside)
@@ -22,32 +27,29 @@ const DropDown = props => {
 
   return (
     <div
-      className={'dropdown '}
+      className={'dropdown ' + (props.className ? props.className : '')}
       ref={wrapperRef}
       onClick={evt => {
-        // props.onClick && props.onClick(evt)
         if (props.noPop) {
           return
         }
         setIsOpen(!isOpen)
       }}>
-      <div className='dropdown-wrapper'>
+      <div className={'dropdown-wrapper ' + (isOpen ? 'list-open' : '')}>
         <div
-          className='dropdown-title'
+          className={'dropdown-title ' + (isOpen ? 'pressed' : '')}
           onClick={evt => {
             if (!props.noPop) {
               return
             }
             setIsOpen(!isOpen)
           }}>
-          <span>{props.title}</span>
-          <span className='dropdown-icon'>
-            {props.icon ? (
-              props.icon
-            ) : (
-              <Triangle className='dropdown-triangle' />
-            )}
-          </span>
+          {props.title}
+          {props.icon ? (
+            props.icon
+          ) : (
+            <i className='dropdown-arrow fas fa-angle-down'></i>
+          )}
         </div>
         {props.children && (
           <div

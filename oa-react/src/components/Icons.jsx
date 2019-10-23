@@ -6,7 +6,8 @@ export const Triangle = props => {
       xmlns='http://www.w3.org/2000/svg'
       width='14'
       height='12'
-      viewBox='0 0 14 12'>
+      viewBox='0 0 14 12'
+      {...props}>
       <path
         d='M6.136,1.481a1,1,0,0,1,1.728,0L13.123,10.5a1,1,0,0,1-.864,1.5H1.741a1,1,0,0,1-.864-1.5Z'
         transform='translate(14 12) rotate(180)'

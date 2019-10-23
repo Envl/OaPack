@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from './logo.svg'
-import './App.css'
-import DropDown from './components/DropDown'
+import {DropDown} from './exports'
 
 function App() {
   return (
