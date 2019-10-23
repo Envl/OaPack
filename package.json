@@ -4,7 +4,8 @@
   "description": "A compound of frequently used utilities in js.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"cd oa-react && npm start"
   },
   "repository": {
     "type": "git",
