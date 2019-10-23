@@ -1,20 +1,25 @@
-.dropdown {
+.dropdown-wrapper {
   text-transform: capitalize;
   position: relative;
   & *::selection {
     background: none;
   }
+  @include control-basic();
 }
 
-.dropdown-wrapper {
+.dropdown {
   position: absolute;
+  top: 0;
+  left: 0;
   @include comic();
 }
 
+.virtual-dropdown {
+  // used as a placeholder as the DropDown has a absolute position which doesn't occupy a space in parent
+  visibility: hidden;
+}
 .dropdown-title {
-  cursor: pointer;
-  height: 20px;
-  padding: 10px 18px;
+  padding: 9px 18px;
   display: flex;
   flex-direction: row;
   background: white;
@@ -29,6 +34,8 @@
 }
 
 .dropdown-list {
+  // @include comic-border();
+  // position: absolute;
   margin-top: 0px;
   display: flex;
   flex-direction: column;
@@ -51,7 +58,7 @@
     text-decoration: none;
     &:hover {
       background: #d2ecfe;
-      cursor: pointer;
+      // cursor: pointer;
     }
   }
 }

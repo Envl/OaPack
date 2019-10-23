@@ -13,12 +13,6 @@ const DropDown = props => {
   }
 
   useEffect(() => {
-    if (!document.head.querySelector('#fa-script')) {
-      const script = document.createElement('script')
-      script.src = 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
-      script.id = 'fa-script'
-      document.head.appendChild(script)
-    }
     if (!props.noPop) {
       document.addEventListener('mousedown', handleClickOutside)
       return () => document.removeEventListener('mousedown', handleClickOutside)
@@ -27,7 +21,7 @@ const DropDown = props => {
 
   return (
     <div
-      className={'dropdown ' + (props.className ? props.className : '')}
+      className={'dropdown-wrapper ' + (props.className ? props.className : '')}
       ref={wrapperRef}
       onClick={evt => {
         if (props.noPop) {
@@ -35,7 +29,15 @@ const DropDown = props => {
         }
         setIsOpen(!isOpen)
       }}>
-      <div className={'dropdown-wrapper ' + (isOpen ? 'list-open' : '')}>
+      <div className='virtual-dropdown'>
+        {props.title}
+        {props.icon ? (
+          props.icon
+        ) : (
+          <i className='dropdown-arrow fas fa-angle-down'></i>
+        )}
+      </div>
+      <div className={'dropdown ' + (isOpen ? 'list-open' : '')}>
         <div
           className={'dropdown-title ' + (isOpen ? 'pressed' : '')}
           onClick={evt => {

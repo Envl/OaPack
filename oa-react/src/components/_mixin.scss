@@ -1,4 +1,6 @@
 @mixin comic-border {
+  outline: none;
+  // text-decoration: none;
   border: solid 1px #0007;
   border-radius: 2px;
   border-width: 1px 3px 4px 1px;
@@ -20,4 +22,12 @@
   @include comic-border();
   @include comic-hover();
   @include comic-active();
+}
+
+@mixin control-basic {
+  margin: $control-margin;
+  padding: $padding-m;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: capitalize;
 }

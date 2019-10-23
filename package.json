@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"cd oa-react && npm start"
+    "start": "cd oa-react && npm start"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/Envl/OaPack/issues"
   },
-  "homepage": "https://github.com/Envl/OaPack#readme"
+  "homepage": "https://github.com/Envl/OaPack#readme",
+  "dependencies": {}
 }
