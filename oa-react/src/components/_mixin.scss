@@ -30,4 +30,7 @@
   font-size: 16px;
   cursor: pointer;
   text-transform: capitalize;
+  & > *:hover {
+    cursor: pointer;
+  }
 }

@@ -1,6 +1,7 @@
 .oa-card {
   @include control-basic();
   @include comic();
+  display: table;
 }
 
 .btn-wrapper {

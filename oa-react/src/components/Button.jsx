@@ -1,18 +1,24 @@
 import React, {useState, useEffect, useRef} from 'react'
 
 export const Card = props => {
-  return <div className='oa-card'>{props.children}</div>
+  return (
+    <div
+      {...props}
+      className={'oa-card ' + (props.className ? props.className : '')}>
+      {props.children}
+    </div>
+  )
 }
 
 const Button = props => {
   console.log(props)
 
   return (
-    <div className='btn-wrapper'>
+    <div className={'btn-wrapper ' + (props.className ? props.className : '')}>
       <button className='v-oa-btn'>{props.children}</button>
       <button
-        className={'oa-btn ' + (props.className ? props.className : '')}
-        {...props}>
+        {...props}
+        className={'oa-btn ' + (props.className ? props.className : '')}>
         {props.children}
       </button>
     </div>
