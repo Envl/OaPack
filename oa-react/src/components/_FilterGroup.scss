@@ -1,0 +1,44 @@
+.oa-filters-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  @include comic-border();
+  border-width: 1px 2px 2px 1px;
+  padding: 5px 5px 1px;
+}
+
+.oa-filter-toggle {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+  margin-bottom: 5px;
+  flex-shrink: 2;
+  outline: none;
+  height: 28px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  color: gray;
+  font-size: 15px;
+  font-family: sans-serif;
+  height: 40px;
+  min-width: 80px;
+  // transition: all 0.3s ease;
+  background-color: white;
+  transition: ease-in-out 0.1s;
+  @include comic-border();
+  @include comic-active();
+  &.on {
+    filter: brightness(89%);
+    @include comic-pressed();
+    // transform: translateY(2px);
+  }
+  &.off {
+    @include comic-hover();
+    @include hover-dark();
+    // color: $semi-black;
+  }
+}

@@ -1,7 +1,22 @@
 import React from 'react'
 import logo from './logo.svg'
-import {Card, DropDown, Button} from './exports'
+import {Button, FilterGroup, Card, DropDown} from './exports'
 
+function Cards() {
+  return (
+    <Card>
+      <Card className='ss'>
+        <Card>
+          <Card onClick={() => console.log('second')}>
+            <Card>
+              <Button onClick={() => console.log('bttn')}>btn</Button>
+            </Card>
+          </Card>
+        </Card>
+      </Card>
+    </Card>
+  )
+}
 function App() {
   return (
     <div className='App' style={{display: 'flex'}}>
@@ -10,24 +25,21 @@ function App() {
         <div>aaa</div>
         <div>aaa</div>
       </DropDown>
-      <Card>
-        <Card className='ss'>
-          <Card>
-            <Card onClick={() => console.log('second')}>
-              <Card>
-                <Button onClick={() => console.log('bttn')}>btn</Button>
-              </Card>
-            </Card>
-          </Card>
-        </Card>
-      </Card>
+
       <button>normal</button>
-      <Button onClick={() => console.log('ssss')} test='aa'>
+      <Cards />
+      <Button onClick={() => console.log('ssss')} test='aa' className='sss'>
         btn
       </Button>
       <Card>
         <button>normal</button>
       </Card>
+
+      <Cards />
+      <FilterGroup
+        filters={['Yes...', 'we', 'are..', 'Filters!', 'Click MEEE!!!!!!']}
+        defaultIndex={0}
+      />
     </div>
   )
 }

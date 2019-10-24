@@ -11,14 +11,21 @@ export const Card = props => {
 }
 
 const Button = props => {
-  console.log(props)
-
+  const [pressed, setPressed] = useState(false)
   return (
     <div className={'btn-wrapper ' + (props.className ? props.className : '')}>
       <button className='v-oa-btn'>{props.children}</button>
       <button
         {...props}
-        className={'oa-btn ' + (props.className ? props.className : '')}>
+        onClick={evt => {
+          props.onClick && props.onClick(evt)
+          if (props.toggle) {
+            setPressed(!pressed)
+          }
+        }}
+        className={`oa-btn ${pressed ? 'oa-btn-on' : 'oa-btn-off'} ${
+          props.className ? props.className : ''
+        }`}>
         {props.children}
       </button>
     </div>

@@ -1,10 +1,12 @@
 .dropdown-wrapper {
+  z-index: 1000;
   text-transform: capitalize;
   position: relative;
   & *::selection {
     background: none;
   }
   @include control-basic();
+  cursor: pointer;
 }
 
 .dropdown {

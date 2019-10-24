@@ -5,20 +5,23 @@
   border-radius: 2px;
   border-width: 1px 3px 4px 1px;
 }
+@mixin comic-pressed {
+  border-width: 1px 2px 2px 1px;
+  transform: translateY(2px);
+}
 @mixin comic-active {
-  transition: ease-in-out 0.1s;
   &:active {
-    border-width: 1px 2px 2px 1px;
-    transform: translateY(4px);
+    border-width: 1px 2px 2px 1px !important;
+    transform: translateY(3px) !important;
   }
 }
 @mixin comic-hover {
-  transition: ease-in-out 0.1s;
-  &:hover:not(:active) {
+  &:hover {
     transform: translateY(1px);
   }
 }
 @mixin comic {
+  transition: ease-in-out 0.1s;
   @include comic-border();
   @include comic-hover();
   @include comic-active();
@@ -28,9 +31,32 @@
   margin: $control-margin;
   padding: $padding-m;
   font-size: 16px;
-  cursor: pointer;
+  // cursor: pointer;
   text-transform: capitalize;
-  & > *:hover {
-    cursor: pointer;
+  // & > *:hover {
+  //   cursor: pointer;
+  // }
+}
+
+@mixin hover-bright() {
+  &:not([disabled]) {
+    &:hover {
+      filter: brightness(108%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      filter: brightness(115%);
+      transition: all 0.3s ease;
+    }
+  }
+}
+@mixin hover-dark() {
+  &:not([disabled]) {
+    &:hover {
+      filter: brightness(95%);
+    }
+    &:active {
+      filter: brightness(89%);
+    }
   }
 }

@@ -1,6 +1,7 @@
 .oa-card {
   @include control-basic();
-  @include comic();
+  @include comic-border();
+  @include comic-hover();
   display: table;
 }
 
@@ -15,6 +16,7 @@
 .oa-btn {
   @include comic();
   @include control-basic();
+  cursor: pointer;
   background: white;
   position: absolute;
   top: 0;

@@ -1,3 +1,8 @@
+// universal settings
+body {
+  font-family: sans-serif;
+}
+
 // variables
 @import './components/variables';
 @import './components/mixin';
@@ -5,3 +10,4 @@
 // components
 @import './components/DropDown';
 @import './components/Buttons';
+@import './components/FilterGroup';

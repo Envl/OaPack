@@ -1,3 +1,5 @@
+/*  for test purpose only */
+
 body {
   margin: 2vw;
 }
@@ -5,4 +7,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  display: flex;
+  flex-flow: row wrap;
 }
