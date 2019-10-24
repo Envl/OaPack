@@ -40,6 +40,12 @@ function App() {
         filters={['Yes...', 'we', 'are..', 'Filters!', 'Click MEEE!!!!!!']}
         defaultIndex={0}
       />
+      <Card>
+        <FilterGroup
+          filters={['Yes...', 'we', 'are..', 'Filters!', 'Click MEEE!!!!!!']}
+          defaultIndex={0}
+        />
+      </Card>
     </div>
   )
 }
