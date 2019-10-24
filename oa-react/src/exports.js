@@ -2,7 +2,7 @@
 import './_index.scss'
 // components
 import DropDown from './components/DropDown'
-import Button from './components/Button'
+import Button, {Card} from './components/Button'
 
 // mount FontAwesome script
 if (!document.head.querySelector('#fa-script')) {
@@ -13,4 +13,4 @@ if (!document.head.querySelector('#fa-script')) {
   script.defer = true
   document.head.appendChild(script)
 }
-export {DropDown, Button}
+export {DropDown, Button, Card}

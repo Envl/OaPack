@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 
-const Card = props => {
+export const Card = props => {
   return <div className='oa-card'>{props.children}</div>
 }
 

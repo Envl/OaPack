@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './logo.svg'
-import {DropDown, Button} from './exports'
+import {Card, DropDown, Button} from './exports'
 
 function App() {
   return (
@@ -10,12 +10,22 @@ function App() {
         <div>aaa</div>
         <div>aaa</div>
       </DropDown>
-      <Button>btn</Button>
+      <Card>
+        <Card>
+          <Card>
+            <Card>
+              <Button>btn</Button>
+            </Card>
+          </Card>
+        </Card>
+      </Card>
       <button>normal</button>
       <Button onClick={() => console.log('ssss')} test='aa'>
         btn
       </Button>
-      <button>normal</button>
+      <Card>
+        <button>normal</button>
+      </Card>
     </div>
   )
 }
