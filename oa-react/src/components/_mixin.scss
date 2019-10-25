@@ -1,3 +1,7 @@
+@mixin transition-fast {
+  transition: ease-in-out 0.1s;
+}
+
 @mixin comic-border {
   outline: none;
   // text-decoration: none;
@@ -21,7 +25,7 @@
   }
 }
 @mixin comic {
-  transition: ease-in-out 0.1s;
+  @include transition-fast();
   @include comic-border();
   @include comic-hover();
   @include comic-active();

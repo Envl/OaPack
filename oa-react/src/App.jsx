@@ -31,6 +31,10 @@ function App() {
       <Button onClick={() => console.log('ssss')} test='aa' className='sss'>
         btn
       </Button>
+      {/* use event.isToggleOn to check the status of toggle button */}
+      <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
+        toggle
+      </Button>
       <Card>
         <button>normal</button>
       </Card>

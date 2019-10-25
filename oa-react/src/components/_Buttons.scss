@@ -22,3 +22,20 @@
   top: 0;
   left: 0;
 }
+
+.oa-toggle-on {
+  @include comic-pressed();
+}
+
+.oa-toggle-on {
+  filter: brightness(89%);
+  &:active {
+    filter: brightness(85%);
+  }
+  &:hover {
+    @include comic-pressed();
+  }
+}
+.oa-toggle-off {
+  @include hover-dark();
+}
