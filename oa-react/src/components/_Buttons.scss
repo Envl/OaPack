@@ -2,38 +2,26 @@
   @include control-basic();
   @include comic-border();
   @include comic-hover();
+  @include transition-fast();
   display: table;
 }
 
 .btn-wrapper {
   position: relative;
 }
-.v-oa-btn {
-  // used as a placeholder as the DropDown has a absolute position which doesn't occupy a space in parent
-  visibility: hidden;
-  @include control-basic();
-}
+
 .oa-btn {
-  @include comic();
-  @include control-basic();
+  height: $btn-height;
+  border: none;
   cursor: pointer;
-  background: white;
-  position: absolute;
-  top: 0;
-  left: 0;
+  @include comic-after();
 }
 
 .oa-toggle-on {
-  @include comic-pressed();
-}
-
-.oa-toggle-on {
+  @include comic-after-pressed();
   filter: brightness(89%);
   &:active {
     filter: brightness(85%);
-  }
-  &:hover {
-    @include comic-pressed();
   }
 }
 .oa-toggle-off {

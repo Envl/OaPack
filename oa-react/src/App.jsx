@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from './logo.svg'
 import {Button, FilterGroup, Card, DropDown} from './exports'
 
@@ -17,6 +17,17 @@ function Cards() {
     </Card>
   )
 }
+
+function Test(props) {
+  const [pressed, setPressed] = useState(false)
+  return (
+    <button
+      className={pressed ? 'btn-a' : 'btn-b'}
+      onClick={() => setPressed(!pressed)}>
+      test
+    </button>
+  )
+}
 function App() {
   return (
     <div className='App' style={{display: 'flex'}}>
@@ -25,9 +36,7 @@ function App() {
         <div>aaa</div>
         <div>aaa</div>
       </DropDown>
-
-      <button>normal</button>
-      <Cards />
+      <Test />
       <Button onClick={() => console.log('ssss')} test='aa' className='sss'>
         btn
       </Button>
@@ -35,6 +44,7 @@ function App() {
       <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
         toggle
       </Button>
+      <button>normal</button>
       <Card>
         <button>normal</button>
       </Card>

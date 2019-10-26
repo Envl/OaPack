@@ -5,8 +5,13 @@
   & *::selection {
     background: none;
   }
+  // @include control-basic();
+}
+
+.virtual-dropdown {
+  // used as a placeholder as the DropDown has a absolute position which doesn't occupy a space in parent
   @include control-basic();
-  cursor: pointer;
+  visibility: hidden;
 }
 
 .dropdown {
@@ -14,14 +19,12 @@
   top: 0;
   left: 0;
   @include comic();
-}
-
-.virtual-dropdown {
-  // used as a placeholder as the DropDown has a absolute position which doesn't occupy a space in parent
-  visibility: hidden;
+  cursor: pointer;
 }
 .dropdown-title {
-  padding: 9px 18px;
+  @include control-basic();
+  margin: 0; // fix
+  height: 19px; // fix
   display: flex;
   flex-direction: row;
   background: white;

@@ -22,13 +22,7 @@ const DropDown = props => {
   return (
     <div
       className={'dropdown-wrapper ' + (props.className ? props.className : '')}
-      ref={wrapperRef}
-      onClick={evt => {
-        if (props.noPop) {
-          return
-        }
-        setIsOpen(!isOpen)
-      }}>
+      ref={wrapperRef}>
       <div className='virtual-dropdown'>
         {props.title}
         {props.icon ? (
@@ -37,7 +31,14 @@ const DropDown = props => {
           <i className='dropdown-arrow fas fa-angle-down'></i>
         )}
       </div>
-      <div className={'dropdown ' + (isOpen ? 'list-open' : '')}>
+      <div
+        className={'dropdown ' + (isOpen ? 'list-open' : '')}
+        onClick={evt => {
+          if (props.noPop) {
+            return
+          }
+          setIsOpen(!isOpen)
+        }}>
         <div
           className={'dropdown-title ' + (isOpen ? 'pressed' : '')}
           onClick={evt => {
