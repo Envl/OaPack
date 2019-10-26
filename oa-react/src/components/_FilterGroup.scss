@@ -2,7 +2,8 @@
   display: flex;
   flex-flow: row wrap;
   @include comic-border();
-margin: $control-margin;
+  @include control-basic();
+  padding: 0;
 }
 
 .oa-filter-toggle {
@@ -13,10 +14,10 @@ margin: $control-margin;
   font-weight: bold;
   border: none;
   color: gray;
-  height: 40px;
+  height: $height-xl;
   // min-width: 80px;
-  
-  &:not(:last-child) ,
+
+  &:not(:last-child),
   &:not(:first-child) {
     border-radius: 0;
   }

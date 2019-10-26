@@ -58,7 +58,13 @@ function App() {
       <Cards />
       <FilterGroup
         single
-        filters={['Yes...', 'we', 'are..', 'Filters!', 'Click MEEE!!!!!!']}
+        filters={[
+          {name: 'Yes...', disabled: false},
+          {name: 'we', disabled: true},
+          'are..',
+          'Filters!',
+          'Click MEEE!!!!!!',
+        ]}
         defaultIndex={0}
         onFilterUpdate={e => console.log(e)}
       />

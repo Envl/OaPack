@@ -24,7 +24,7 @@
 .dropdown-title {
   @include control-basic();
   margin: 0; //fix
-  height: $btn-height; // fix
+  height: $height-xl; // fix
   padding-top: 0px; //fix
   padding-bottom: 0px; //fix
   display: flex;

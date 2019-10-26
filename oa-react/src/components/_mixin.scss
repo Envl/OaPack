@@ -16,10 +16,6 @@
     }
   }
 }
-@mixin comic-control-basic {
-  @include control-basic();
-  margin: 6px 6px 6px 4px;
-}
 @mixin transition-fast {
   transition: ease-in-out 0.1s;
 }
@@ -58,8 +54,9 @@
 }
 
 @mixin comic-after {
-  @include comic-control-basic();
+  @include control-basic();
   @include transition-fast();
+  margin: 6px 6px 6px 4px;
   position: relative;
   outline: 0;
   &::after {

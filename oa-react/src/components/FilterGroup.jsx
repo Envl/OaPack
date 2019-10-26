@@ -9,17 +9,20 @@ const FilterGroup = props => {
     // turn Array into Dictionary
     props.filters &&
       props.filters.reduce((pre, cur) => {
-        pre[cur] = {
+        const k = typeof cur === 'object' ? cur.name : cur
+        pre[k] = {
           pushed:
             props.defaultIndex !== undefined
               ? props.filters[props.defaultIndex] === cur
                 ? true
                 : false
               : false,
+          disabled: cur.disabled !== undefined ? false : cur.disabled,
         }
         return pre
       }, {}),
   )
+  console.log(filterStatus)
 
   function callBack(title, evt) {
     if (!filterStatus) {
@@ -46,16 +49,23 @@ const FilterGroup = props => {
         'oa-filters-wrapper ' + (props.className ? props.className : '')
       }>
       {props.filters &&
-        props.filters.map(title => (
-          <button
-            key={'filter' + title}
-            onClick={evt => callBack(title, evt)}
-            className={
-              'oa-filter-toggle ' + (filterStatus[title].pushed ? 'on' : 'off')
-            }>
-            {title}
-          </button>
-        ))}
+        props.filters.map(obj => {
+          const title = obj.name ? obj.name : obj
+          console.log('3333', filterStatus[title])
+
+          return (
+            <button
+              disabled={obj.disabled === undefined ? false : obj.disabled}
+              key={'filter' + title}
+              onClick={evt => callBack(title, evt)}
+              className={
+                'oa-filter-toggle ' +
+                (filterStatus[title].pushed ? 'on' : 'off')
+              }>
+              {title}
+            </button>
+          )
+        })}
     </div>
   )
 }
