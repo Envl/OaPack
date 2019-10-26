@@ -1,34 +1,28 @@
 .oa-filters-wrapper {
   display: flex;
   flex-flow: row wrap;
-  padding-top: 4px;
+  @include comic-border();
+margin: $control-margin;
 }
 
 .oa-filter-toggle {
-  &:not(:last-child) {
-    margin-right: 8px;
+  @include control-basic();
+  @include transition-fast();
+  flex-grow: 1;
+  margin: 0;
+  font-weight: bold;
+  border: none;
+  color: gray;
+  height: 40px;
+  // min-width: 80px;
+  
+  &:not(:last-child) ,
+  &:not(:first-child) {
+    border-radius: 0;
   }
   &:not([disabled]) {
     cursor: pointer;
   }
-  margin-bottom: 6px;
-  flex-shrink: 2;
-  outline: none;
-  height: 28px;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: none;
-  color: gray;
-  font-size: 15px;
-  font-family: sans-serif;
-  height: 40px;
-  min-width: 80px;
-  // transition: all 0.3s ease;
-  background-color: white;
-  transition: ease-in-out 0.1s;
-  border-radius: 2px;
-
   &.on {
     filter: brightness(89%);
     &:active {

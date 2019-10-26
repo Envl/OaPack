@@ -12,7 +12,7 @@ const FilterGroup = props => {
         pre[cur] = {
           pushed:
             props.defaultIndex !== undefined
-              ? props.filters[props.defaultIndex] == cur
+              ? props.filters[props.defaultIndex] === cur
                 ? true
                 : false
               : false,
@@ -21,7 +21,7 @@ const FilterGroup = props => {
       }, {}),
   )
 
-  function callBack(title, self) {
+  function callBack(title, evt) {
     if (!filterStatus) {
       return
     }
@@ -30,11 +30,11 @@ const FilterGroup = props => {
       filterStatus[title].pushed = true
     } else {
       filterStatus[title].pushed = !filterStatus[title].pushed
-      props.onFilterUpdate &&
-        props.onFilterUpdate(
-          Object.keys(filterStatus).filter(key => filterStatus[key].pushed),
-        )
     }
+    props.onFilterUpdate &&
+      props.onFilterUpdate(
+        Object.keys(filterStatus).filter(key => filterStatus[key].pushed),
+      )
     const tmp = {}
     Object.assign(tmp, filterStatus)
     setFilterStatus(tmp)
@@ -49,7 +49,7 @@ const FilterGroup = props => {
         props.filters.map(title => (
           <button
             key={'filter' + title}
-            onClick={self => callBack(title, self)}
+            onClick={evt => callBack(title, evt)}
             className={
               'oa-filter-toggle ' + (filterStatus[title].pushed ? 'on' : 'off')
             }>

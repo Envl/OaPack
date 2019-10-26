@@ -13,10 +13,10 @@ const DropDown = props => {
   }
 
   useEffect(() => {
-    if (!props.noPop) {
-      document.addEventListener('mousedown', handleClickOutside)
-      return () => document.removeEventListener('mousedown', handleClickOutside)
-    }
+    // if (!props.noPop) {
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+    // }
   }, [])
 
   const title = (
@@ -39,17 +39,17 @@ const DropDown = props => {
         className={'dropdown ' + (isOpen ? 'list-open' : '')}
         ref={wrapperRef}
         onClick={evt => {
-          if (props.noPop) {
-            return
-          }
+          // if (props.noPop) {
+          //   return
+          // }
           setIsOpen(!isOpen)
         }}>
         <div
           className={'dropdown-title ' + (isOpen ? 'pressed' : '')}
           onClick={evt => {
-            if (!props.noPop) {
-              return
-            }
+            // if (!props.noPop) {
+            //   return
+            // }
             setIsOpen(!isOpen)
           }}>
           {title}

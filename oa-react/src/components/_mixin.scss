@@ -4,6 +4,10 @@
   background: white;
   font-size: 16px;
   text-transform: capitalize;
+  font-family: 'Noto Sans SC', sans-serif;
+  user-select: none;
+  outline: none;
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -21,7 +25,6 @@
 }
 
 @mixin comic-border {
-  outline: none;
   border: solid 1px #0007;
   border-radius: 2px 3px 2px 3px;
   border-width: 1px 3px 4px 1px;
@@ -59,7 +62,6 @@
   @include transition-fast();
   position: relative;
   outline: 0;
-  border-radius: 2px;
   &::after {
     @include transition-fast();
     content: '';

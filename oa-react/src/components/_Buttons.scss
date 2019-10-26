@@ -15,11 +15,12 @@
   border: none;
   cursor: pointer;
   @include comic-after();
+  margin: 7px 6px 6px 4px; //fix
 }
 
 .oa-toggle-on {
   @include comic-after-pressed();
-  filter: brightness(89%);
+  background: $toggle-on;
   &:active {
     filter: brightness(85%);
   }
