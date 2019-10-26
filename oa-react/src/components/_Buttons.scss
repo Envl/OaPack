@@ -16,15 +16,22 @@
   cursor: pointer;
   @include comic-after();
   margin: 7px 6px 6px 5px; //fix
+  &::before {
+    @include abs-in-rel();
+    @include transition-mid();
+    height: 0;
+    overflow: hidden;
+    background: $toggle-on;
+  }
 }
-
 .oa-toggle-on {
   @include comic-after-pressed();
-  background: $toggle-on;
-  &:active {
-    filter: brightness(85%);
+  &:before {
+    height: 100%;
   }
 }
 .oa-toggle-off {
-  @include hover-dark();
+  &::before {
+    height: 0;
+  }
 }

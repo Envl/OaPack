@@ -16,7 +16,7 @@ const Button = props => {
   return (
     <button
       {...props}
-      onClick={evt => {
+      onMouseDown={evt => {
         if (props.type === 'toggle') {
           props.onClick && props.onClick({...evt, isToggleOn: !pressed})
           setPressed(!pressed)
