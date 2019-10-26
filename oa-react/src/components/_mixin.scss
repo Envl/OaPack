@@ -1,4 +1,5 @@
 @mixin control-basic {
+  font-weight: 500;
   margin: $control-margin;
   padding: $padding-m;
   background: white;
@@ -7,7 +8,6 @@
   font-family: 'Noto Sans SC', sans-serif;
   user-select: none;
   outline: none;
-
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -56,11 +56,14 @@
 @mixin comic-after {
   @include control-basic();
   @include transition-fast();
+  @include comic-hover();
+  @include comic-active();
   margin: 6px 6px 6px 4px;
   position: relative;
   outline: 0;
   &::after {
     @include transition-fast();
+    @include comic-border();
     content: '';
     position: absolute;
     top: -1px;
@@ -68,7 +71,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    @include comic-border();
+    pointer-events: none;
   }
   &:active {
     transform: translateY(3px) !important;

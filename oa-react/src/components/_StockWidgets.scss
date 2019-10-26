@@ -1,0 +1,5 @@
+input {
+  @include control-basic();
+  @include transition-fast();
+  @include comic-after();
+}

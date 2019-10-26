@@ -61,7 +61,7 @@ function App() {
         filters={[
           {name: 'Yes...', disabled: false},
           {name: 'we', disabled: true},
-          'are..',
+          'are..', // enabled by default
           'Filters!',
           'Click MEEE!!!!!!',
         ]}
@@ -80,6 +80,7 @@ function App() {
         中文lorem 这是一段测试文字, 门前大桥下游过一群鸭, 快来快来数一数,
         二四六七八
       </p>
+      <input type='text' />
     </div>
   )
 }

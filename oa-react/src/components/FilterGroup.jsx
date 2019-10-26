@@ -50,9 +50,7 @@ const FilterGroup = props => {
       }>
       {props.filters &&
         props.filters.map(obj => {
-          const title = obj.name ? obj.name : obj
-          console.log('3333', filterStatus[title])
-
+          const title = obj.name !== undefined ? obj.name : obj
           return (
             <button
               disabled={obj.disabled === undefined ? false : obj.disabled}

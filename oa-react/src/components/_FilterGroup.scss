@@ -1,8 +1,8 @@
 .oa-filters-wrapper {
+  @include comic-after();
+  margin: 7px 6px 6px 5px; //fix
   display: flex;
   flex-flow: row wrap;
-  @include comic-border();
-  @include control-basic();
   padding: 0;
 }
 
@@ -11,7 +11,6 @@
   @include transition-fast();
   flex-grow: 1;
   margin: 0;
-  font-weight: bold;
   border: none;
   color: gray;
   height: $height-xl;
