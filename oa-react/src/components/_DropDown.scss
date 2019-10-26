@@ -2,10 +2,10 @@
   z-index: 1000;
   text-transform: capitalize;
   position: relative;
+  margin: 5px 0 0 4px; // fix
   & *::selection {
     background: none;
   }
-  // @include control-basic();
 }
 
 .virtual-dropdown {
@@ -23,8 +23,10 @@
 }
 .dropdown-title {
   @include control-basic();
-  margin: 0; // fix
-  height: 19px; // fix
+  margin: 0; //fix
+  height: $btn-height; // fix
+  padding-top: 0px; //fix
+  padding-bottom: 0px; //fix
   display: flex;
   flex-direction: row;
   background: white;
@@ -39,8 +41,6 @@
 }
 
 .dropdown-list {
-  // @include comic-border();
-  // position: absolute;
   margin-top: 0px;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,6 @@
     text-decoration: none;
     &:hover {
       background: #d2ecfe;
-      // cursor: pointer;
     }
   }
 }

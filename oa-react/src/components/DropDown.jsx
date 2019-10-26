@@ -21,8 +21,9 @@ const DropDown = props => {
 
   return (
     <div
-      className={'dropdown-wrapper ' + (props.className ? props.className : '')}
-      ref={wrapperRef}>
+      className={
+        'dropdown-wrapper ' + (props.className ? props.className : '')
+      }>
       <div className='virtual-dropdown'>
         {props.title}
         {props.icon ? (
@@ -33,6 +34,7 @@ const DropDown = props => {
       </div>
       <div
         className={'dropdown ' + (isOpen ? 'list-open' : '')}
+        ref={wrapperRef}
         onClick={evt => {
           if (props.noPop) {
             return
