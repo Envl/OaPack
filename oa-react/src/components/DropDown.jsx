@@ -19,19 +19,22 @@ const DropDown = props => {
     }
   }, [])
 
+  const title = (
+    <>
+      {props.title}
+      {props.icon ? (
+        props.icon
+      ) : (
+        <i className='dropdown-arrow fas fa-angle-down'></i>
+      )}
+    </>
+  )
   return (
     <div
       className={
         'dropdown-wrapper ' + (props.className ? props.className : '')
       }>
-      <div className='virtual-dropdown'>
-        {props.title}
-        {props.icon ? (
-          props.icon
-        ) : (
-          <i className='dropdown-arrow fas fa-angle-down'></i>
-        )}
-      </div>
+      <div className='virtual-dropdown'>{title}</div>
       <div
         className={'dropdown ' + (isOpen ? 'list-open' : '')}
         ref={wrapperRef}
@@ -49,12 +52,7 @@ const DropDown = props => {
             }
             setIsOpen(!isOpen)
           }}>
-          {props.title}
-          {props.icon ? (
-            props.icon
-          ) : (
-            <i className='dropdown-arrow fas fa-angle-down'></i>
-          )}
+          {title}
         </div>
         {props.children && (
           <div

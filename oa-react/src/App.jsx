@@ -41,6 +41,9 @@ function App() {
         btn
       </Button>
       {/* use event.isToggleOn to check the status of toggle button */}
+      <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)} disabled>
+        disabled
+      </Button>{' '}
       <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
         toggle
       </Button>
@@ -48,7 +51,6 @@ function App() {
       <Card>
         <button>normal</button>
       </Card>
-
       <Cards />
       <FilterGroup
         filters={['Yes...', 'we', 'are..', 'Filters!', 'Click MEEE!!!!!!']}

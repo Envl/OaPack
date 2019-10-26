@@ -4,6 +4,13 @@
   background: white;
   font-size: 16px;
   text-transform: capitalize;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    &::after {
+      background: #0002;
+    }
+  }
 }
 @mixin comic-control-basic {
   @include control-basic();
@@ -49,7 +56,6 @@
 
 @mixin comic-after {
   @include comic-control-basic();
-  // @include control-basic();
   @include transition-fast();
   position: relative;
   outline: 0;
@@ -62,7 +68,7 @@
     left: -1px;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     @include comic-border();
   }
   &:active {
@@ -71,7 +77,7 @@
       border-width: 1px 2px 2px 1px;
     }
   }
-  &:hover {
+  &:hover:not([disabled]) {
     transform: translateY(1px);
   }
 }
