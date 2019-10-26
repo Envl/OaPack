@@ -4,6 +4,7 @@ import './_index.scss'
 import DropDown from './components/DropDown'
 import Button, {Card} from './components/Button'
 import FilterGroup from './components/FilterGroup'
+import Carousel from './components/Carousel'
 
 // mount FontAwesome script
 if (!document.head.querySelector('#fa-script')) {
@@ -14,4 +15,4 @@ if (!document.head.querySelector('#fa-script')) {
   script.defer = true
   document.head.appendChild(script)
 }
-export {DropDown, Button, Card, FilterGroup}
+export {DropDown, Button, Card, FilterGroup, Carousel}

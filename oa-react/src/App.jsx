@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import logo from './logo.svg'
-import {Button, FilterGroup, Card, DropDown} from './exports'
+import {Carousel, Button, FilterGroup, Card, DropDown} from './exports'
 
 function Cards() {
   return (
@@ -80,7 +80,14 @@ function App() {
         中文lorem 这是一段测试文字, 门前大桥下游过一群鸭, 快来快来数一数,
         二四六七八
       </p>
-      <input type='text' />
+      <input type='text' placeholder='江南皮革厂倒闭了' />
+      <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
+      <Card>
+        <Card>
+          <Card></Card>
+        </Card>
+      </Card>
+      <Carousel />
     </div>
   )
 }

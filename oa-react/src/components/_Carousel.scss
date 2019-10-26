@@ -1,0 +1,35 @@
+.oa-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 100px;
+}
+
+.carousel-item {
+  @include abs-in-rel();
+  // width: 100%;
+  // height: 100%;
+  transition: ease-in-out 0.3s;
+  background: blue;
+  &:active {
+    height: 0px;
+  }
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  width: 40px;
+  height: 50%;
+  background: blue;
+}
+.item-0 {
+  background: red;
+}
+.item-1 {
+  background: rebeccapurple;
+}
+.item-2 {
+  background: green;
+}

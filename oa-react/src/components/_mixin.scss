@@ -1,3 +1,13 @@
+// absolute element in relative element
+@mixin abs-in-rel {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 @mixin control-basic {
   font-weight: 500;
   margin: $control-margin;
@@ -15,6 +25,9 @@
       background: #0002;
     }
   }
+}
+@mixin transition-mid {
+  transition: ease-in-out 0.3s;
 }
 @mixin transition-fast {
   transition: ease-in-out 0.1s;
