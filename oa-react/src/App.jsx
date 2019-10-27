@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import logo from './logo.svg'
 import {Carousel, Button, FilterGroup, Card, DropDown} from './exports'
+import './_App.scss'
 
 function Cards() {
   return (
@@ -18,6 +19,22 @@ function Cards() {
   )
 }
 
+function DrawingLine({line}) {
+  const pathData = 'M ' + line.map(p => p.x + ' ' + p.y).join(' L ')
+  return <path d={pathData} />
+}
+function Drawing({lines}) {
+  return (
+    lines.length > 0 && (
+      <svg className='svg-lines'>
+        {lines.map((line, index) => (
+          <DrawingLine key={index} line={line} />
+        ))}
+      </svg>
+    )
+  )
+}
+
 function Test(props) {
   const [pressed, setPressed] = useState(false)
   return (
@@ -28,9 +45,56 @@ function Test(props) {
     </button>
   )
 }
+function lineLen(line) {
+  return Math.sqrt(
+    (line[0].x - line[1].x) * (line[0].x - line[1].x) +
+      (line[0].y - line[1].y) * (line[0].y - line[1].y),
+  )
+}
 function App() {
+  const [ls, setLines] = useState([])
+  const ref = useRef(null)
+  const [target, setTarget] = useState(false)
+  const children = document.querySelector('#root').children
+  // console.log('App', children)
+  useEffect(() => {
+    console.log(ref.current.childNodes, 'ffff')
+  }, [])
   return (
-    <div className='App' style={{display: 'flex'}}>
+    <div
+      ref={ref}
+      className='App'
+      style={{display: 'flex'}}
+      onClick={e => {
+        if (target) {
+          // console.log(target)
+          target.click()
+        }
+      }}
+      onMouseMove={e => {
+        const lines = ['dd']
+        let len = 1000000
+        ref.current.childNodes.forEach(elem => {
+          const rect = elem.getBoundingClientRect()
+          const l = [
+            {x: e.pageX, y: e.pageY},
+            {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+          ]
+          const newLen = lineLen(l)
+          if (newLen < len) {
+            len = newLen
+            lines[0] = l
+            setTarget(elem)
+          }
+          // lines.push([
+          //   {x: e.pageX, y: e.pageY},
+          //   {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+          // ])
+        })
+        setLines(lines)
+      }}>
+      <Drawing lines={ls} />
+      <Test />
       <DropDown title='DropDown' onClick={e => console.log(e.target)}>
         <div>aaa</div>
         <div>aaa</div>

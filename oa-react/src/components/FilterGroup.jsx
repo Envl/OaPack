@@ -27,7 +27,7 @@ const FilterGroup = props => {
         return pre
       }, {}),
   )
-  console.log(filterStatus)
+  // console.debug(filterStatus)
 
   function callBack(title, evt) {
     if (!filterStatus) {

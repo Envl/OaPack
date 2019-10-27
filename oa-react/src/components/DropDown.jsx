@@ -36,6 +36,7 @@ const DropDown = props => {
       }>
       <div className='virtual-dropdown'>{title}</div>
       <div
+        {...props}
         className={'dropdown ' + (isOpen ? 'list-open' : '')}
         ref={wrapperRef}
         onClick={evt => {
