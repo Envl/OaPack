@@ -11,10 +11,26 @@
 .oa-secret {
   &::after {
     @include abs-top-left();
-    background: gray;
+    @include transition-mid();
+    @include stripe-bg(#797ba8, #535470) display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    content: 'Click to see the secret' !important;
+    color: wheat;
+    overflow: hidden;
   }
   &:active::after {
-    // width: 0px;
-    background: #0000;
+    content: '' !important;
+    width: 0px;
+    // background: #0000;
+  }
+  @include smaller-than(567px) {
+    &:hover::after {
+      content: '' !important;
+      width: 0px;
+      // background: #0000;
+    }
   }
 }

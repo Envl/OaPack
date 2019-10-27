@@ -133,3 +133,18 @@
     }
   }
 }
+
+@mixin stripe-bg($clr1, $clr2) {
+  background-image: linear-gradient(
+    40deg,
+    #{$clr1} 25%,
+    #{$clr2} 25%,
+    #{$clr2} 50%,
+    #{$clr1} 50%,
+    #{$clr1} 75%,
+    #{$clr2} 75%,
+    #{$clr2} 100%,
+    #{$clr1} 100%
+  );
+  background-size: 62.23px 52.22px;
+}
