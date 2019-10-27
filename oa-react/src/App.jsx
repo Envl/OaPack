@@ -51,7 +51,7 @@ function App() {
       <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
         toggle
       </Button>
-      <button>normal</button>
+      <button>normllal</button>
       <Card>
         <button>normal</button>
       </Card>

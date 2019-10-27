@@ -17,7 +17,7 @@ const FilterGroup = props => {
                 ? true
                 : false
               : false,
-          disabled: cur.disabled !== undefined ? false : cur.disabled,
+          disabled: cur.disabled === undefined ? false : cur.disabled,
         }
         return pre
       }, {}),
@@ -48,22 +48,18 @@ const FilterGroup = props => {
       className={
         'oa-filters-wrapper ' + (props.className ? props.className : '')
       }>
-      {props.filters &&
-        props.filters.map(obj => {
-          const title = obj.name !== undefined ? obj.name : obj
-          return (
-            <button
-              disabled={obj.disabled === undefined ? false : obj.disabled}
-              key={'filter' + title}
-              onClick={evt => callBack(title, evt)}
-              className={
-                'oa-filter-toggle ' +
-                (filterStatus[title].pushed ? 'on' : 'off')
-              }>
-              {title}
-            </button>
-          )
-        })}
+      {filterStatus &&
+        Object.keys(filterStatus).map(k => (
+          <button
+            disabled={filterStatus[k].disabled}
+            key={'filter' + k}
+            onClick={evt => callBack(k, evt)}
+            className={
+              'oa-filter-toggle ' + (filterStatus[k].pushed ? 'on' : 'off')
+            }>
+            {k}
+          </button>
+        ))}
     </div>
   )
 }
