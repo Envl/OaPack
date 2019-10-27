@@ -88,7 +88,7 @@ function App() {
         二四六七八
       </p>
       <input className='oa-input' type='text' placeholder='江南皮革厂倒闭了' />
-      <Carousel className='oa-secret' style={{height: '200px', width: '550px'}}>
+      <Carousel style={{height: '200px', width: '550px'}}>
         <input type='text' placeholder='也可以这样' />
         <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
         <Card>
@@ -101,6 +101,9 @@ function App() {
           <div>b</div>
           <div>c</div>
         </DropDown>
+      </Carousel>
+      <Carousel className='oa-secret'>
+        <h1>dd</h1>
       </Carousel>
     </div>
   )

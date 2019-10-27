@@ -134,17 +134,12 @@
   }
 }
 
-@mixin stripe-bg($clr1, $clr2) {
-  background-image: linear-gradient(
-    40deg,
-    #{$clr1} 25%,
-    #{$clr2} 25%,
-    #{$clr2} 50%,
-    #{$clr1} 50%,
-    #{$clr1} 75%,
-    #{$clr2} 75%,
-    #{$clr2} 100%,
-    #{$clr1} 100%
+@mixin stripe-bg($clr1, $clr2, $angle: 45deg, $width: 20px) {
+  background: repeating-linear-gradient(
+    #{$angle},
+    #{$clr1},
+    #{$clr1} #{$width},
+    #{$clr2} #{$width},
+    #{$clr2} calc(2 * #{$width})
   );
-  background-size: 62.23px 52.22px;
 }
