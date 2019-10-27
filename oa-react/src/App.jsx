@@ -62,16 +62,22 @@ function App() {
           {name: 'Yes...', disabled: false},
           {name: 'we', disabled: true},
           'are..', // enabled by default
-          'Filters!',
+          {name: 'Filters!', pushed: true},
           'Click MEEE!!!!!!',
         ]}
-        defaultIndex={0}
+        // defaultIndex/={0}
         onFilterUpdate={e => console.log(e)}
       />
       <FilterGroup
         onFilterUpdate={e => console.log(e)}
-        filters={['中文', '字体', '也', '还行', '吧']}
-        defaultIndex={0}
+        filters={[
+          '中文',
+          '字体',
+          {name: '也', pushed: true},
+          {name: '还行', pushed: true},
+          '吧',
+        ]}
+        // defaultIndex={0}
       />
       <Button>测试</Button>
       <p>
