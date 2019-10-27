@@ -70,6 +70,7 @@ function App() {
       />
       <FilterGroup
         onFilterUpdate={e => console.log(e)}
+        className='oa-secret'
         filters={[
           '中文',
           '字体',
@@ -79,15 +80,15 @@ function App() {
         ]}
         // defaultIndex={0}
       />
-      <Button>测试</Button>
+      <Button className='oa-secret'>测试</Button>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt
         diam felis, sed tempor est pellentesque vel. Mauris tempus convallis.
         中文lorem 这是一段测试文字, 门前大桥下游过一群鸭, 快来快来数一数,
         二四六七八
       </p>
-      <input type='text' placeholder='江南皮革厂倒闭了' />
-      <Carousel height='200px'>
+      <input className='oa-input' type='text' placeholder='江南皮革厂倒闭了' />
+      <Carousel style={{height: '200px', width: '550px'}}>
         <input type='text' placeholder='也可以这样' />
         <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
         <Card>

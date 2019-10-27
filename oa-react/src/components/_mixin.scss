@@ -1,11 +1,22 @@
+@import './media-query';
+
 // absolute element in relative element
-@mixin abs-in-rel {
+// container must be ***position:relative***
+@mixin abs-no-align {
   position: absolute;
   content: '';
-  left: 0;
-  top: 0;
   height: 100%;
   width: 100%;
+}
+@mixin abs-top-left {
+  @include abs-no-align();
+  left: 0;
+  top: 0;
+}
+@mixin abs-top-right {
+  @include abs-no-align();
+  right: 0;
+  top: 0;
 }
 
 @mixin control-basic {
@@ -16,7 +27,6 @@
   font-size: 16px;
   text-transform: capitalize;
   font-family: 'Noto Sans SC', sans-serif;
-  user-select: none;
   outline: none;
   &:disabled {
     opacity: 0.5;
@@ -98,24 +108,28 @@
 }
 
 @mixin hover-bright() {
-  &:not([disabled]) {
-    &:hover {
-      filter: brightness(108%);
-      transition: all 0.3s ease;
-    }
-    &:active {
-      filter: brightness(115%);
-      transition: all 0.3s ease;
+  @include greater-than(568px) {
+    &:not([disabled]) {
+      &:hover {
+        filter: brightness(108%);
+        transition: all 0.3s ease;
+      }
+      &:active {
+        filter: brightness(115%);
+        transition: all 0.3s ease;
+      }
     }
   }
 }
 @mixin hover-dark() {
-  &:not([disabled]) {
-    &:hover {
-      filter: brightness(95%);
-    }
-    &:active {
-      filter: brightness(85%);
+  @include greater-than(568px) {
+    &:not([disabled]) {
+      &:hover {
+        filter: brightness(95%);
+      }
+      &:active {
+        filter: brightness(85%);
+      }
     }
   }
 }

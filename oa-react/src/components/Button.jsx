@@ -27,8 +27,8 @@ const Button = props => {
       className={`oa-btn ${
         props.type === 'toggle'
           ? pressed
-            ? 'oa-toggle-on'
-            : 'oa-toggle-off'
+            ? 'oa-toggle oa-toggle-on'
+            : 'oa-toggle oa-toggle-off'
           : ''
       } ${props.className ? props.className : ''}`}>
       {props.children}
