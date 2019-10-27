@@ -81,13 +81,20 @@ function App() {
         二四六七八
       </p>
       <input type='text' placeholder='江南皮革厂倒闭了' />
-      <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
-      <Card>
+      <Carousel height='200px'>
+        <input type='text' placeholder='也可以这样' />
+        <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
         <Card>
-          <Card></Card>
+          <Card>
+            <Card></Card>
+          </Card>
         </Card>
-      </Card>
-      <Carousel />
+        <DropDown title='打开看看' onClick={e => console.log(e.target)}>
+          <div>A</div>
+          <div>b</div>
+          <div>c</div>
+        </DropDown>
+      </Carousel>
     </div>
   )
 }

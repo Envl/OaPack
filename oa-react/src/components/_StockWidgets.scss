@@ -7,3 +7,15 @@ input {
   border: 1px solid #0007;
   text-transform: none;
 }
+
+// WIP   hold to reveal
+.oa-secret {
+  &::after {
+    @include abs-in-rel();
+    background: gray;
+    height: 100%;
+    &:active {
+      height: 0px;
+    }
+  }
+}
