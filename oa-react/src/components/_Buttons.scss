@@ -16,10 +16,14 @@
   cursor: pointer;
   @include comic-after();
   margin: 7px 6px 6px 5px; //fix
+}
+.oa-toggle {
   &::before {
-    @include abs-in-rel();
+    @include abs-no-align();
     @include transition-mid();
     height: 0;
+    bottom: 0;
+    left: 0;
     overflow: hidden;
     background: $toggle-on;
   }

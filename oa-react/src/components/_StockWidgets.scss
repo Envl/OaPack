@@ -1,4 +1,4 @@
-input {
+.oa-input {
   @include control-basic();
   @include transition-fast();
   height: $height-xm;
@@ -8,14 +8,13 @@ input {
   text-transform: none;
 }
 
-// WIP   hold to reveal
 .oa-secret {
   &::after {
-    @include abs-in-rel();
+    @include abs-top-left();
     background: gray;
-    height: 100%;
-    &:active {
-      height: 0px;
-    }
+  }
+  &:active::after {
+    // width: 0px;
+    background: #0000;
   }
 }
