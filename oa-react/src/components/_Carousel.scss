@@ -9,7 +9,7 @@
 }
 
 .carousel-item {
-  @include abs-in-rel();
+  @include abs-top-left();
   @include transition-mid();
 
   // below for test purpose only

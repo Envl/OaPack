@@ -15,11 +15,8 @@ const Carousel = props => {
 
   return (
     <div
-      className={`oa-carousel ${props.className ? props.className : ''}`}
-      style={{
-        width: props.width,
-        height: props.height,
-      }}>
+      {...props}
+      className={`oa-carousel ${props.className ? props.className : ''}`}>
       <div className='carousel-indicators'>
         {contents.map((item, index) => (
           <div
