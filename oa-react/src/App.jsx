@@ -66,8 +66,9 @@ function App() {
       className='App'
       style={{display: 'flex'}}
       onClick={e => {
-        if (target) {
-          // console.log(target)
+        if (target && target.click) {
+          console.log(target)
+          console.log(ref.current.childNodes)
           target.click()
         }
       }}
@@ -76,14 +77,18 @@ function App() {
         let len = 1000000
         ref.current.childNodes.forEach(elem => {
           const rect = elem.getBoundingClientRect()
-          const l = [
+          const ldist = [
             {x: e.pageX, y: e.pageY},
             {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
           ]
-          const newLen = lineLen(l)
+          const ldraw = [
+            {x: e.clientX, y: e.clientY},
+            {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+          ]
+          const newLen = lineLen(ldist)
           if (newLen < len) {
             len = newLen
-            lines[0] = l
+            lines[0] = ldraw
             setTarget(elem)
           }
           // lines.push([

@@ -1,7 +1,8 @@
 // test purpose only
 
+// a static layer on top of the page
 .svg-lines {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
