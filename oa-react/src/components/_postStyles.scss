@@ -8,20 +8,20 @@
     align-items: center;
     font-size: 12px;
     cursor: pointer;
-    content: 'Click to see the secret' !important;
+    content: 'Secret' !important;
     color: wheat;
     overflow: hidden;
   }
-  &:active::after {
+  // &:active::after {
+  //   content: '' !important;
+  //   width: 0px;
+  //   // background: #0000;
+  // }
+  // @include smaller-than(567px) {
+  &:hover::after {
     content: '' !important;
     width: 0px;
     // background: #0000;
   }
-  @include smaller-than(567px) {
-    &:hover::after {
-      content: '' !important;
-      width: 0px;
-      // background: #0000;
-    }
-  }
+  // }
 }

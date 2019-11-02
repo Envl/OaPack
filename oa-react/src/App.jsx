@@ -181,7 +181,14 @@ function App() {
       <Carousel className='oa-secret'>
         <h1>dd</h1>
       </Carousel>
-      <CubeMenu />
+      <CubeMenu
+        u='sdsg'
+        l={
+          <Card>
+            <Card></Card>
+          </Card>
+        }
+      />
     </div>
   )
 }

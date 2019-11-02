@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
-const CubeMenu = () => {
-  const facets = ['u', 'd', 'l', 'r', 'f', 'b']
+const CubeMenu = ({f, u, l, b, d, r}) => {
+  const facets = ['u', 'f', 'l', 'r', 'd', 'b']
   const [hoverFacet, setHoverFacet] = useState('')
   return (
     <div className={`oa-cube hover-${hoverFacet}`}>
@@ -18,7 +18,16 @@ const CubeMenu = () => {
           onMouseLeave={() => {
             setHoverFacet('')
           }}>
-          {f}
+          {
+            {
+              u: u ? u : '',
+              f: f ? f : '',
+              l: l ? l : '',
+              d: d ? d : '',
+              r: r ? r : '',
+              b: b ? b : '',
+            }[f]
+          }
         </div>
       ))}
     </div>

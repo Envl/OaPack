@@ -20,10 +20,26 @@
     // transform: rotate3d(0.1, 1, -0.1, -80deg);
     transform: rotateX(-20deg) rotateY(-70deg);
   }
-}
-.oa-cube:has(.facet-l) {
-  transform: rotate3d(0, 1, 0, 90deg);
-  display: none;
+
+  // block pointer events of children
+  &.hover-f > .facet-f > * {
+    pointer-events: visible;
+  }
+  &.hover-u > .facet-u > * {
+    pointer-events: visible;
+  }
+  &.hover-d > .facet-d > * {
+    pointer-events: visible;
+  }
+  &.hover-l > .facet-l > * {
+    pointer-events: visible;
+  }
+  &.hover-r > .facet-r > * {
+    pointer-events: visible;
+  }
+  &.hover-b > .facet-b > * {
+    pointer-events: visible;
+  }
 }
 
 .cube-facet {
@@ -32,11 +48,15 @@
   height: 100%;
   opacity: 0.8;
   color: white;
-  font-size: 6rem;
+  font-size: 1.5rem;
   justify-content: center;
   align-items: center;
   display: flex;
+  overflow: hidden;
   backface-visibility: visible;
+  & > * {
+    pointer-events: none;
+  }
 }
 
 .facet-l {
