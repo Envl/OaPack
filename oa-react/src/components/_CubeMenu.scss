@@ -1,0 +1,67 @@
+.oa-cube {
+  @include transition-slow();
+  // display: flex;
+  // position: relative;
+  width: 100px;
+  height: 100px;
+  // transform: rotate3d(1, 1, 1, -45deg);
+  transform: rotateX(-20deg) rotateY(-20deg);
+  perspective: 1950px;
+  transform-style: preserve-3d;
+
+  &:hover {
+    perspective: 1200px;
+  }
+  &.hover-u {
+    // transform: rotate3d(1, 0.1, 0.1, -80deg);
+    transform: rotateX(-70deg) rotateY(-30deg);
+  }
+  &.hover-l {
+    // transform: rotate3d(0.1, 1, -0.1, -80deg);
+    transform: rotateX(-20deg) rotateY(-70deg);
+  }
+}
+.oa-cube:has(.facet-l) {
+  transform: rotate3d(0, 1, 0, 90deg);
+  display: none;
+}
+
+.cube-facet {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  color: white;
+  font-size: 6rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  backface-visibility: visible;
+}
+
+.facet-l {
+  background: cadetblue;
+  transform: rotateY(90deg) translateZ(50px);
+}
+.facet-r {
+  transform: rotateY(-90deg) translateZ(50px);
+  background: gray;
+}
+
+.facet-f {
+  transform: translateZ(50px);
+  background: chocolate;
+}
+.facet-b {
+  transform: rotateY(180deg) translateZ(50px);
+  background: cornflowerblue;
+}
+
+.facet-u {
+  transform: rotateX(90deg) translateZ(50px);
+  background: rebeccapurple;
+}
+.facet-d {
+  transform: rotateX(-90deg) translateZ(50px);
+  background: yellow;
+}
