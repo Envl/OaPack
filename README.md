@@ -2,7 +2,9 @@
 
 Oh! a package! which includes frequently used React UI Components and useful Utility functions.
 
-These UI Components are fancy yet costy. If you don't mind the slightly influenced performance, enjoy it.
+These UI Components are fancy yet a bit costy. If you don't mind the slightly influenced performance(can't notice if not used in large scale).
+
+Enjoy it.
 
 ## Dependencies
 
