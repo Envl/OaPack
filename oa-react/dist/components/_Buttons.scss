@@ -1,0 +1,41 @@
+.oa-card {
+  @include control-basic();
+  @include comic-border();
+  @include comic-hover();
+  @include transition-fast();
+  display: table;
+}
+
+.btn-wrapper {
+  position: relative;
+}
+
+.oa-btn {
+  height: $height-xl;
+  border: none;
+  cursor: pointer;
+  @include comic-after();
+  margin: 7px 6px 6px 5px; //fix
+}
+.oa-toggle {
+  &::before {
+    @include abs-no-align();
+    @include transition-mid();
+    height: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: $toggle-on;
+  }
+}
+.oa-toggle-on {
+  @include comic-after-pressed();
+  &:before {
+    height: 100%;
+  }
+}
+.oa-toggle-off {
+  &::before {
+    height: 0;
+  }
+}

@@ -1,0 +1,9 @@
+.oa-input {
+  @include control-basic();
+  @include transition-fast();
+  height: $height-xm;
+  padding: 8px 18px 9px; //fix
+  border-radius: 2px 3px 2px 3px;
+  border: 1px solid #0007;
+  text-transform: none;
+}

@@ -1,10 +1,11 @@
 README.md
 .gitignore
 package-lock.json
-/src/App.jsx
-/src/_App.scss
-/src/serviceWorker.js
-/src/index.js
+/src
+/dist/App.jsx
+/dist/_App.scss
+/dist/serviceWorker.js
+/dist/index.js
 /public
 # dependencies
 /node_modules

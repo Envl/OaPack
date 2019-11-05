@@ -1,0 +1,51 @@
+.oa-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: $comic-radius;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carousel-item {
+  @include abs-top-left();
+  @include transition-mid();
+
+  // below for test purpose only
+  background-size: cover;
+  &:nth-child(2n + 1) {
+    background-image: url(https://loremflickr.com/640/360);
+  }
+  &:nth-child(2n) {
+    background-image: url(http://lorempixel.com/400/200/);
+  }
+}
+
+.carousel-indicators {
+  z-index: 100;
+  align-self: center;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  background: #0007;
+  border-radius: 10px 0 0 10px;
+  padding: 5px 3px;
+}
+$indicator-w: 9px;
+.carousel-indicator {
+  @include transition-mid();
+  border-radius: $indicator-w;
+  cursor: pointer;
+  height: calc(2 * #{$indicator-w});
+  width: calc(2 * #{$indicator-w});
+  background: #fff7;
+  margin: 3px;
+  &.current-indi {
+    background: #fffc;
+    flex-grow: 2;
+    // max-height: 40px;
+  }
+}

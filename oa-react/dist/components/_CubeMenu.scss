@@ -1,0 +1,88 @@
+.oa-cube {
+  @include transition-mid();
+  -webkit-font-smoothing: antialiased;
+  // display: flex;
+  // position: relative;
+  width: 100px;
+  height: 100px;
+  // transform: rotate3d(1, 1, 1, -45deg);
+  transform: rotateX(-20deg) rotateY(-20deg);
+  perspective: 1950px;
+  transform-style: preserve-3d;
+
+  &:hover {
+    perspective: 1200px;
+  }
+  &.hover-u {
+    // transform: rotate3d(1, 0.1, 0.1, -80deg);
+    transform: rotateX(-70deg) rotateY(-30deg);
+  }
+  &.hover-l {
+    // transform: rotate3d(0.1, 1, -0.1, -80deg);
+    transform: rotateX(-20deg) rotateY(-70deg);
+  }
+
+  // block pointer events of children
+  &.hover-f > .facet-f > * {
+    pointer-events: visible;
+  }
+  &.hover-u > .facet-u > * {
+    pointer-events: visible;
+  }
+  &.hover-d > .facet-d > * {
+    pointer-events: visible;
+  }
+  &.hover-l > .facet-l > * {
+    pointer-events: visible;
+  }
+  &.hover-r > .facet-r > * {
+    pointer-events: visible;
+  }
+  &.hover-b > .facet-b > * {
+    pointer-events: visible;
+  }
+}
+
+.cube-facet {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  color: white;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  backface-visibility: visible;
+  & > * {
+    pointer-events: none;
+  }
+}
+
+.facet-l {
+  background: cadetblue;
+  transform: rotateY(90deg) translateZ(50px);
+}
+.facet-r {
+  transform: rotateY(-90deg) translateZ(50px);
+  background: gray;
+}
+
+.facet-f {
+  transform: translateZ(50px);
+  background: chocolate;
+}
+.facet-b {
+  transform: rotateY(180deg) translateZ(50px);
+  background: cornflowerblue;
+}
+
+.facet-u {
+  transform: rotateX(90deg) translateZ(50px);
+  background: rebeccapurple;
+}
+.facet-d {
+  transform: rotateX(-90deg) translateZ(50px);
+  background: yellow;
+}
