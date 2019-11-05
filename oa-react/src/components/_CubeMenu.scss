@@ -1,5 +1,6 @@
 .oa-cube {
-  @include transition-slow();
+  @include transition-mid();
+  -webkit-font-smoothing: antialiased;
   // display: flex;
   // position: relative;
   width: 100px;

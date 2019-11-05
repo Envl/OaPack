@@ -1,4 +1,6 @@
 import {copyToClipboard as iOSCopy} from './vallina-js/iOS_tools'
-// import {*} from './oa-react/src/exports'
+import * as ui from './oa-react/src/exports'
 
-export {iOSCopy}
+const OaTest = () => console.log('Oh! a package!')
+
+export {iOSCopy, ui}

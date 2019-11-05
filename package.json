@@ -1,8 +1,11 @@
 {
   "name": "oapack",
   "version": "1.0.0",
-  "description": "A compound of frequently used utilities in js.",
+  "description": "A compound of frequently used utilities in js and comic styled React UI components",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd oa-react && npm start"
