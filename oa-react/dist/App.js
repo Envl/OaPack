@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import logo from './logo.svg';
 import { CubeMenu, Carousel, Button, FilterGroup, Card, DropDown } from './exports';
 import './_App.scss';
 
