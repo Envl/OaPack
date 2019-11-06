@@ -1,14 +1,14 @@
 {
   "name": "oa-react",
-  "version": "0.1.0",
+  "version": "0.1.9",
   "private": false,
-  "main": "dist/index.js",
+  "main": "index.js",
   "babel": {
     "presets": [
       "@babel/preset-react"
     ]
   },
-  "dependencies": {
+  "peerDependencies": {
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "transpile": "babel src -d dist --copy-files"
+    "transpile": "babel src -d dist --copy-files",
+    "pub": "npm run transpile && npm publish"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +39,26 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
-    "@babel/preset-react": "^7.7.0"
-  }
+    "@babel/preset-react": "^7.7.0",
+    "node-sass": "^4.13.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Envl/OaPack.git"
+  },
+  "keywords": [
+    "react",
+    "js",
+    "react ui",
+    "comic"
+  ],
+  "author": "GnimOay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Envl/OaPack/issues"
+  },
+  "homepage": "https://github.com/Envl/OaPack#readme"
 }

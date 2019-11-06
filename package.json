@@ -1,12 +1,14 @@
 {
   "name": "@envl/oapack",
-  "version": "0.1.3",
+  "version": "0.2.0",
+  "private": false,
   "description": "A compound of frequently used utilities in js and comic styled React UI components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd oa-react && npm start",
-    "transpile": "cd oa-react && npm run transpile"
+    "transpile": "cd oa-react && npm run transpile",
+    "pub": "cd oa-react && npm run transpile && npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,5 @@
   "bugs": {
     "url": "https://github.com/Envl/OaPack/issues"
   },
-  "homepage": "https://github.com/Envl/OaPack#readme",
-  "dependencies": {}
+  "homepage": "https://github.com/Envl/OaPack#readme"
 }
