@@ -82,6 +82,9 @@ function App() {
         const lines = ['dd']
         let len = 1000000
         ref.current.childNodes.forEach(elem => {
+          if (elem.localName !== 'button') {
+            return
+          }
           const rect = elem.getBoundingClientRect()
           const ldist = [
             {x: e.pageX, y: e.pageY},
@@ -95,6 +98,7 @@ function App() {
           if (newLen < len) {
             len = newLen
             lines[0] = ldraw
+
             setTarget(elem)
           }
           // lines.push([
@@ -104,6 +108,14 @@ function App() {
         })
         setLines(lines)
       }}>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <Button type='toggle'>Laser Pointer</Button>
+      <div className='test'></div>
       <Drawing lines={ls} />
       <Test />
       <DropDown title='DropDown' onClick={e => console.log(e.target)}>
