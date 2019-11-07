@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd oa-react && npm start",
     "transpile": "cd oa-react && npm run transpile",
-    "pub": "cd oa-react && npm run transpile && npm publish"
+    "pub": "cd oa-react && npm run transpile && npm publish",
+    "build": "cd oa-react && npm run build"
   },
   "repository": {
     "type": "git",
