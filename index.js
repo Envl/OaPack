@@ -1,5 +1,8 @@
 import * as utils from './vallina-js/iOS_tools'
 import {
+  SidebarInjector,
+  Sidebar,
+  SidebarItem,
   DropDown,
   Button,
   Card,
@@ -11,4 +14,16 @@ import {
 //test
 const OaTest = () => console.log('Oh! a package!')
 
-export {utils, OaTest, DropDown, Button, Card, FilterGroup, Carousel, CubeMenu}
+export {
+  utils,
+  OaTest,
+  DropDown,
+  Button,
+  Card,
+  FilterGroup,
+  Carousel,
+  CubeMenu,
+  Sidebar,
+  SidebarInjector,
+  SidebarItem,
+}

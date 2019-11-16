@@ -6,6 +6,7 @@ import Button, {Card} from './components/Button'
 import FilterGroup from './components/FilterGroup'
 import Carousel from './components/Carousel'
 import CubeMenu from './components/CubeMenu'
+import {Sidebar, SidebarItem, SidebarInjector} from './components/Sidebar'
 
 // mount FontAwesome script
 if (!document.head.querySelector('#fa-script')) {
@@ -16,4 +17,14 @@ if (!document.head.querySelector('#fa-script')) {
   script.defer = true
   document.head.appendChild(script)
 }
-export {DropDown, Button, Card, FilterGroup, Carousel, CubeMenu}
+export {
+  DropDown,
+  Button,
+  Card,
+  FilterGroup,
+  Carousel,
+  CubeMenu,
+  Sidebar,
+  SidebarInjector,
+  SidebarItem,
+}

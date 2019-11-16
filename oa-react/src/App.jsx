@@ -1,5 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {
+  SidebarItem,
+  SidebarInjector,
+  Sidebar,
   CubeMenu,
   Carousel,
   Button,
@@ -67,140 +70,156 @@ function App() {
     console.log(ref.current.childNodes, 'ffff')
   }, [])
   return (
-    <div
-      ref={ref}
-      className='App'
-      style={{display: 'flex'}}
-      onClick={e => {
-        if (target && target.click) {
-          console.log(target)
-          console.log(ref.current.childNodes)
-          target.click()
-        }
-      }}
-      onMouseMove={e => {
-        const lines = ['dd']
-        let len = 1000000
-        ref.current.childNodes.forEach(elem => {
-          if (elem.localName !== 'button') {
-            return
+    <SidebarInjector
+      sidebar={
+        <Sidebar>
+          <SidebarItem to='/test' brief='CV' detail='CV'></SidebarItem>
+          <SidebarItem to='/' brief='P.' detail='Projects'></SidebarItem>
+          <SidebarItem to='/' brief='H.' detail='Home'></SidebarItem>
+        </Sidebar>
+      }>
+      <div
+        ref={ref}
+        className='App'
+        style={{display: 'flex'}}
+        onClick={e => {
+          if (target && target.click) {
+            console.log(target)
+            console.log(ref.current.childNodes)
+            target.click()
           }
-          const rect = elem.getBoundingClientRect()
-          const ldist = [
-            {x: e.pageX, y: e.pageY},
-            {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-          ]
-          const ldraw = [
-            {x: e.clientX, y: e.clientY},
-            {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-          ]
-          const newLen = lineLen(ldist)
-          if (newLen < len) {
-            len = newLen
-            lines[0] = ldraw
+        }}
+        onMouseMove={e => {
+          const lines = ['dd']
+          let len = 1000000
+          ref.current.childNodes.forEach(elem => {
+            if (elem.localName !== 'button') {
+              return
+            }
+            const rect = elem.getBoundingClientRect()
+            const ldist = [
+              {x: e.pageX, y: e.pageY},
+              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+            ]
+            const ldraw = [
+              {x: e.clientX, y: e.clientY},
+              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+            ]
+            const newLen = lineLen(ldist)
+            if (newLen < len) {
+              len = newLen
+              lines[0] = ldraw
 
-            setTarget(elem)
-          }
-          // lines.push([
-          //   {x: e.pageX, y: e.pageY},
-          //   {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-          // ])
-        })
-        setLines(lines)
-      }}>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <Button type='toggle'>Laser Pointer</Button>
-      <div className='test'></div>
-      <Drawing lines={ls} />
-      <Test />
-      <DropDown title='DropDown' onClick={e => console.log(e.target)}>
-        <div>aaa</div>
-        <div>aaa</div>
-        <div>aaa</div>
-      </DropDown>
-      <Test />
-      <Button
-        onClick={() => console.log('ssss')}
-        test='aa'
-        className='sss'
-        style={{width: '100%'}}>
-        btn
-      </Button>
-      {/* use event.isToggleOn to check the status of toggle button */}
-      <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)} disabled>
-        disabled
-      </Button>
-      <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
-        toggle
-      </Button>
-      <button>normllal</button>
-      <Card>
-        <button>normal</button>
-      </Card>
-      <Cards />
-      <FilterGroup
-        single
-        filters={[
-          {name: 'Yes...', disabled: false},
-          {name: 'we', disabled: true},
-          'are..', // enabled by default
-          {name: 'Filters!', pushed: true},
-          'Click MEEE!!!!!!',
-        ]}
-        // defaultIndex/={0}
-        onFilterUpdate={e => console.log(e)}
-      />
-      <FilterGroup
-        onFilterUpdate={e => console.log(e)}
-        className='oa-secret'
-        filters={[
-          '中文',
-          '字体',
-          {name: '也', pushed: true},
-          {name: '还行', pushed: true},
-          '吧',
-        ]}
-        // defaultIndex={0}
-      />
-      <Button className='oa-secret'>测试</Button>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt
-        diam felis, sed tempor est pellentesque vel. Mauris tempus convallis.
-        中文lorem 这是一段测试文字, 门前大桥下游过一群鸭, 快来快来数一数,
-        二四六七八
-      </p>
-      <input className='oa-input' type='text' placeholder='江南皮革厂倒闭了' />
-      <Carousel style={{height: '200px', width: '550px'}}>
-        <input type='text' placeholder='也可以这样' />
-        <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
-        <Card>
-          <Card>
-            <Card></Card>
-          </Card>
-        </Card>
-        <DropDown title='打开看看' onClick={e => console.log(e.target)}>
-          <div>A</div>
-          <div>b</div>
-          <div>c</div>
+              setTarget(elem)
+            }
+            // lines.push([
+            //   {x: e.pageX, y: e.pageY},
+            //   {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+            // ])
+          })
+          setLines(lines)
+        }}>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <Button type='toggle'>Laser Pointer</Button>
+        <div className='test'></div>
+        <Drawing lines={ls} />
+        <Test />
+        <DropDown title='DropDown' onClick={e => console.log(e.target)}>
+          <div>aaa</div>
+          <div>aaa</div>
+          <div>aaa</div>
         </DropDown>
-      </Carousel>
-      <Carousel className='oa-secret'>
-        <h1>dd</h1>
-      </Carousel>
-      <CubeMenu
-        u='sdsg'
-        l={
+        <Test />
+        <Button
+          onClick={() => console.log('ssss')}
+          test='aa'
+          className='sss'
+          style={{width: '100%'}}>
+          btn
+        </Button>
+        {/* use event.isToggleOn to check the status of toggle button */}
+        <Button
+          type={'toggle'}
+          onClick={e => console.log(e.isToggleOn)}
+          disabled>
+          disabled
+        </Button>
+        <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
+          toggle
+        </Button>
+        <button>normllal</button>
+        <Card>
+          <button>normal</button>
+        </Card>
+        <Cards />
+        <FilterGroup
+          single
+          filters={[
+            {name: 'Yes...', disabled: false},
+            {name: 'we', disabled: true},
+            'are..', // enabled by default
+            {name: 'Filters!', pushed: true},
+            'Click MEEE!!!!!!',
+          ]}
+          // defaultIndex/={0}
+          onFilterUpdate={e => console.log(e)}
+        />
+        <FilterGroup
+          onFilterUpdate={e => console.log(e)}
+          className='oa-secret'
+          filters={[
+            '中文',
+            '字体',
+            {name: '也', pushed: true},
+            {name: '还行', pushed: true},
+            '吧',
+          ]}
+          // defaultIndex={0}
+        />
+        <Button className='oa-secret'>测试</Button>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          tincidunt diam felis, sed tempor est pellentesque vel. Mauris tempus
+          convallis. 中文lorem 这是一段测试文字, 门前大桥下游过一群鸭,
+          快来快来数一数, 二四六七八
+        </p>
+        <input
+          className='oa-input'
+          type='text'
+          placeholder='江南皮革厂倒闭了'
+        />
+        <Carousel style={{height: '200px', width: '550px'}}>
+          <input type='text' placeholder='也可以这样' />
+          <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
           <Card>
-            <Card></Card>
+            <Card>
+              <Card></Card>
+            </Card>
           </Card>
-        }
-      />
-    </div>
+          <DropDown title='打开看看' onClick={e => console.log(e.target)}>
+            <div>A</div>
+            <div>b</div>
+            <div>c</div>
+          </DropDown>
+        </Carousel>
+        <Carousel className='oa-secret'>
+          <h1>dd</h1>
+        </Carousel>
+        <CubeMenu
+          u='sdsg'
+          l={
+            <Card>
+              <Card></Card>
+            </Card>
+          }
+        />
+      </div>
+    </SidebarInjector>
   )
 }
 
