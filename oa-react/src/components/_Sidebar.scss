@@ -26,14 +26,16 @@
   @include transition-mid();
   z-index: 1001;
   border: $thirdClr solid;
-  border-width: 0 1px 0 0;
   background: white;
   align-items: center;
   width: 40px;
   display: flex;
   position: fixed;
   left: 0;
-  top: 0;
+  @include greater-than(768px) {
+    border-width: 0 1px 0 0;
+    top: 0;
+  }
   height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +53,19 @@
     }
     .sidebar-item-brief {
       display: none;
+    }
+  }
+}
+
+@include smaller-than(768px) {
+  .oa-sidebar {
+    height: 200px;
+    bottom: 100px;
+    border-width: 1px 1px 1px 0;
+    border-radius: $comic-radius;
+    width: 30px;
+    &:hover {
+      width: 80px;
     }
   }
 }
