@@ -1,16 +1,13 @@
-import React, {useState, useRef, useEffect} from 'react'
-import {
-  SidebarItem,
-  SidebarInjector,
-  Sidebar,
-  CubeMenu,
-  Carousel,
-  Button,
-  FilterGroup,
-  Card,
-  DropDown,
-} from './exports'
+import './_index.scss'
 import './_App.scss'
+
+import React, {useState, useRef, useEffect} from 'react'
+import Button, {Card} from './components/Button'
+import Carousel from './components/Carousel'
+import CubeMenu from './components/CubeMenu'
+import DropDown from './components/DropDown'
+import FilterGroup from './components/FilterGroup'
+import {SidebarInjector, Sidebar, SidebarItem} from './components/Sidebar'
 
 function Cards() {
   return (

@@ -49,6 +49,7 @@
   height: 100%;
   opacity: 0.8;
   color: white;
+  background: white;
   font-size: 1.5rem;
   justify-content: center;
   align-items: center;
@@ -61,28 +62,28 @@
 }
 
 .facet-l {
-  background: cadetblue;
+  // background: cadetblue;
   transform: rotateY(90deg) translateZ(50px);
 }
 .facet-r {
   transform: rotateY(-90deg) translateZ(50px);
-  background: gray;
+  // background: gray;
 }
 
 .facet-f {
   transform: translateZ(50px);
-  background: chocolate;
+  // background: chocolate;
 }
 .facet-b {
   transform: rotateY(180deg) translateZ(50px);
-  background: cornflowerblue;
+  // background: cornflowerblue;
 }
 
 .facet-u {
   transform: rotateX(90deg) translateZ(50px);
-  background: rebeccapurple;
+  // background: rebeccapurple;
 }
 .facet-d {
   transform: rotateX(-90deg) translateZ(50px);
-  background: yellow;
+  // background: yellow;
 }

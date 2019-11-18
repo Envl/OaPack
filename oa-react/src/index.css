@@ -1,15 +1,6 @@
-/*  for test purpose only */
-
-body {
-  /* margin: 2vw; */
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.App {
+.App,
+#root {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
 }

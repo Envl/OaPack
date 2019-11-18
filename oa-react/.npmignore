@@ -1,6 +1,8 @@
 README.md
 .gitignore
 package-lock.json
+*.scss
+_index.js
 /src
 /dist/App.jsx
 /dist/_App.scss

@@ -1,26 +1,26 @@
 {
-  "name": "oa-react",
-  "version": "0.1.9",
+  "name": "oapack",
+  "version": "0.0.8",
   "private": false,
-  "main": "index.js",
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
+  "main": "test.js",
   "peerDependencies": {
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-dom": "^16.11.0"
   },
   "scripts": {
     "start": "PORT=8989 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "transpile": "babel src -d dist --copy-files",
+    "transpile": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files  && babel _index.js --out-file index.js && sass ./src/_index.scss ./dist/index.css",
     "pub": "npm run transpile && npm publish"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
