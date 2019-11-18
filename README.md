@@ -8,5 +8,8 @@ Enjoy it.
 
 ## Dependencies
 
-- `node-sass`
+- `node-sass v4.13.0`
+- `react v16.11.0`
+- `react-dom v16.11.0`
+- `react-scripts v3.2.0`
 - `FontAwesome`

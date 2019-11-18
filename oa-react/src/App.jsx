@@ -9,6 +9,18 @@ import DropDown from './components/DropDown'
 import FilterGroup from './components/FilterGroup'
 import {SidebarInjector, Sidebar, SidebarItem} from './components/Sidebar'
 
+if (
+  typeof window !== 'undefined' &&
+  !document.head.querySelector('#fa-script')
+) {
+  const script = document.createElement('script')
+  script.src = 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
+  script.id = 'fa-script'
+  script.async = true
+  script.defer = true
+  document.head.appendChild(script)
+}
+
 function Cards() {
   return (
     <Card>
@@ -126,7 +138,7 @@ function App() {
         <div className='test'></div>
         <Drawing lines={ls} />
         <Test />
-        <DropDown title='DropDown' onClick={e => console.log(e.target)}>
+        <DropDown name='DropDown' onClick={e => console.log(e.target)}>
           <div>aaa</div>
           <div>aaa</div>
           <div>aaa</div>
@@ -198,7 +210,7 @@ function App() {
               <Card></Card>
             </Card>
           </Card>
-          <DropDown title='打开看看' onClick={e => console.log(e.target)}>
+          <DropDown name='打开看看' onClick={e => console.log(e.target)}>
             <div>A</div>
             <div>b</div>
             <div>c</div>

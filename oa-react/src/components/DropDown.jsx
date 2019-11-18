@@ -21,7 +21,7 @@ const DropDown = props => {
 
   const title = (
     <>
-      {props.title}
+      {props.name}
       {props.icon ? (
         props.icon
       ) : (
@@ -69,7 +69,7 @@ const DropDown = props => {
   )
 }
 DropDown.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
 
 export default DropDown

@@ -1,4 +1,4 @@
-import * as utils from './vallina-js/iOS_tools'
+import * as utils from './vallina-js/src/iOS_tools'
 import {
   SidebarInjector,
   Sidebar,
@@ -9,7 +9,7 @@ import {
   FilterGroup,
   Carousel,
   CubeMenu,
-} from './oa-react/dist/exports'
+} from './oa-react/_index'
 
 //test
 const OaTest = () => console.log('Oh! a package!')

@@ -1,13 +1,18 @@
 {
   "name": "@envl/oapack",
-  "version": "0.2.1",
+  "version": "0.2.9",
   "private": false,
   "description": "A compound of frequently used utilities in js and comic styled React UI components",
   "main": "index.js",
+  "peerDependencies": {
+    "node-sass": "^4.13.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd oa-react && npm start",
-    "transpile": "cd oa-react && npm run transpile",
+    "transpile": "babel vallina-js/src -d vallina-js/dist --out-files &&babel dev-index.js --out-file index.js && cd oa-react && npm run transpile",
     "pub": "cd oa-react && npm run transpile && npm publish",
     "build": "cd oa-react && npm run build"
   },

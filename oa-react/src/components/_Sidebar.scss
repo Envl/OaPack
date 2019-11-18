@@ -53,7 +53,8 @@
   justify-content: center;
   justify-items: center;
   .sidebar-item-detail {
-    opacity: 0;
+    overflow: hidden;
+    opacity: 0.2;
     height: 0px;
     width: 0px;
   }
@@ -67,7 +68,9 @@
     //   margin-right: 110px;
     // }
     .sidebar-item-detail {
-      @include transition-mid();
+      transition-duration: 0.3s;
+      transition-property: opacity;
+      transition-delay: 0.1s;
       opacity: 1;
       width: 100%;
       height: auto;
