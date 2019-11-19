@@ -60,7 +60,9 @@
     pointer-events: none;
   }
 }
-
+.cube-facet {
+  color: black;
+}
 .facet-l {
   // background: cadetblue;
   transform: rotateY(90deg) translateZ(50px);

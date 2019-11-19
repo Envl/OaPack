@@ -4,16 +4,19 @@ const CubeMenu = ({f, u, l, b, d, r}) => {
   const facets = ['u', 'f', 'l', 'r', 'd', 'b']
   const [hoverFacet, setHoverFacet] = useState('')
   return (
-    <div className={`oa-cube hover-${hoverFacet}`}>
-      {facets.map(f => (
+    <div
+      className={`oa-cube hover-${hoverFacet} ${
+        props.className ? props.className : ''
+      }`}>
+      {facets.map(facet => (
         <div
-          className={`cube-facet facet-${f}`}
-          key={f}
+          className={`cube-facet facet-${facet}`}
+          key={facet}
           onMouseEnter={() => {
-            setHoverFacet(f)
+            setHoverFacet(facet)
           }}
           onMouseMove={() => {
-            setHoverFacet(f)
+            setHoverFacet(facet)
           }}
           onMouseLeave={() => {
             setHoverFacet('')
@@ -26,7 +29,7 @@ const CubeMenu = ({f, u, l, b, d, r}) => {
               d: d ? d : '',
               r: r ? r : '',
               b: b ? b : '',
-            }[f]
+            }[facet]
           }
         </div>
       ))}

@@ -22,7 +22,11 @@ export function SidebarItem({brief, detail, to}) {
   )
 }
 export const Sidebar = ({children, items}) => {
-  return <div className='oa-sidebar'>{children}</div>
+  return (
+    <div className={`oa-sidebar ${props.className ? props.className : ''}`}>
+      {children}
+    </div>
+  )
 }
 
 export function SidebarInjector({sidebar, children}) {

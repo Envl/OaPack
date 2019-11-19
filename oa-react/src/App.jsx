@@ -138,7 +138,7 @@ function App() {
         <div className='test'></div>
         <Drawing lines={ls} />
         <Test />
-        <DropDown name='DropDown' onClick={e => console.log(e.target)}>
+        <DropDown name='Down' onClick={e => console.log(e.target)}>
           <div>aaa</div>
           <div>aaa</div>
           <div>aaa</div>
@@ -226,6 +226,7 @@ function App() {
               <Card></Card>
             </Card>
           }
+          f='sdgds'
         />
       </div>
     </SidebarInjector>
