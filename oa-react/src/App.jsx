@@ -80,12 +80,12 @@ function App() {
   }, [])
   return (
     <SidebarInjector
-      sidebar={
-        <Sidebar>
+      items={
+        <>
           <SidebarItem to='/test' brief='CV' detail='CV'></SidebarItem>
           <SidebarItem to='/' brief='P.' detail='Projects'></SidebarItem>
           <SidebarItem to='/' brief='H.' detail='Home'></SidebarItem>
-        </Sidebar>
+        </>
       }>
       <div
         ref={ref}

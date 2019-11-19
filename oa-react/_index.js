@@ -6,7 +6,7 @@ import Button, {Card} from './dist/Button'
 import FilterGroup from './dist/FilterGroup'
 import Carousel from './dist/Carousel'
 import CubeMenu from './dist/CubeMenu' // mount FontAwesome script
-import {Sidebar, SidebarItem, SidebarInjector} from './dist/Sidebar'
+import {SidebarItem, SidebarInjector} from './dist/Sidebar'
 
 if (
   typeof window !== 'undefined' &&
@@ -27,7 +27,6 @@ export {
   FilterGroup,
   Carousel,
   CubeMenu,
-  Sidebar,
   SidebarInjector,
   SidebarItem,
 }

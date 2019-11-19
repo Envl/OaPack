@@ -1,6 +1,6 @@
 {
   "name": "oapack",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "private": false,
   "main": "test.js",
   "peerDependencies": {

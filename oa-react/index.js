@@ -41,12 +41,6 @@ Object.defineProperty(exports, "CubeMenu", {
     return _CubeMenu.default;
   }
 });
-Object.defineProperty(exports, "Sidebar", {
-  enumerable: true,
-  get: function get() {
-    return _Sidebar.Sidebar;
-  }
-});
 Object.defineProperty(exports, "SidebarItem", {
   enumerable: true,
   get: function get() {

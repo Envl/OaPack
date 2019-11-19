@@ -47,7 +47,7 @@
 }
 
 @mixin comic-border {
-  border: solid 1px #0007;
+  border: solid 1px $semi-black;
   border-radius: 2px 3px 2px 3px;
   border-width: 1px 3px 4px 1px;
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const CubeMenu = ({f, u, l, b, d, r}) => {
+const CubeMenu = ({f, u, l, b, d, r, ...props}) => {
   const facets = ['u', 'f', 'l', 'r', 'd', 'b']
   const [hoverFacet, setHoverFacet] = useState('')
   return (
