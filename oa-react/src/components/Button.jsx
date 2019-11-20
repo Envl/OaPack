@@ -12,6 +12,11 @@ export const Card = props => {
 }
 
 const Button = props => {
+  useEffect(() => {
+    if (props.type === 'toggle' && props.pressed) {
+      setPressed(true)
+    }
+  }, [])
   const [pressed, setPressed] = useState(false)
   return (
     <button

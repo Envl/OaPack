@@ -4,6 +4,7 @@
   @include comic-hover();
   @include transition-fast();
   display: table;
+  text-transform: initial;
 }
 
 .btn-wrapper {

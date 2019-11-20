@@ -26,8 +26,8 @@ const CubeMenu = ({f, u, l, b, d, r, ...props}) => {
               u: u ? u : '',
               f: f ? f : '',
               l: l ? l : '',
-              d: d ? d : '',
               r: r ? r : '',
+              d: d ? d : '',
               b: b ? b : '',
             }[facet]
           }

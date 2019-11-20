@@ -6,20 +6,26 @@
   width: 100px;
   height: 100px;
   // transform: rotate3d(1, 1, 1, -45deg);
-  transform: rotateX(-20deg) rotateY(-20deg);
+  transform: rotateX(-25deg) rotateY(-45deg);
+  margin: 40px 0;
+
   perspective: 1950px;
   transform-style: preserve-3d;
 
-  &:hover {
-    perspective: 1200px;
+  // &:hover {
+  // perspective: 1200px;
+  // }
+  &.hover-f {
+    transform: none;
   }
   &.hover-u {
     // transform: rotate3d(1, 0.1, 0.1, -80deg);
-    transform: rotateX(-70deg) rotateY(-30deg);
+    transform: rotateX(-90deg);
+    animation: 3s linear 0.7s infinite spinning;
   }
-  &.hover-l {
+  &.hover-r {
     // transform: rotate3d(0.1, 1, -0.1, -80deg);
-    transform: rotateX(-20deg) rotateY(-70deg);
+    transform: rotateY(-90deg);
   }
 
   // block pointer events of children
@@ -48,7 +54,8 @@
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  color: white;
+  color: black;
+  box-shadow: 0px 0px 2px rgb(0, 0, 0) inset;
   background: white;
   font-size: 1.5rem;
   justify-content: center;
@@ -65,10 +72,10 @@
 }
 .facet-l {
   // background: cadetblue;
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(50px);
 }
 .facet-r {
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(50px);
   // background: gray;
 }
 
