@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 
 const FilterGroup = props => {
@@ -27,6 +27,28 @@ const FilterGroup = props => {
         return pre
       }, {}),
   )
+  useEffect(() => {
+    return (
+      props.filters &&
+      props.filters.reduce((pre, cur) => {
+        const k = typeof cur === 'object' ? cur.name : cur
+        const pushed = cur.pushed === undefined ? false : cur.pushed
+        if (pushed) {
+          pushedCounter++
+          if (props.single && pushedCounter >= 2) {
+            throw new Error(
+              'FilterGroup with "single" option can only have one filter pushed',
+            )
+          }
+        }
+        pre[k] = {
+          pushed: pushed,
+          disabled: cur.disabled === undefined ? false : cur.disabled,
+        }
+        return pre
+      }, {})
+    )
+  }, [props.filters])
   // console.debug(filterStatus)
 
   function callBack(title, evt) {

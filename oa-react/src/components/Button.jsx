@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 
 export const Card = props => {
@@ -13,7 +13,7 @@ export const Card = props => {
 
 const Button = props => {
   useEffect(() => {
-    if (props.type === 'toggle' && props.pressed) {
+    if (props.type === 'toggle' && props.pressed === 'true') {
       setPressed(true)
     }
   }, [])
