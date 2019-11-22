@@ -1,6 +1,6 @@
 {
   "name": "@envl/oapack",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "private": false,
   "description": "A compound of frequently used utilities in js and comic styled React UI components",
   "main": "index.js",
