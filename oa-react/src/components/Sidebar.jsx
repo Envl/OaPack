@@ -17,6 +17,7 @@ export function SidebarItem({brief, detail, to, className, ...props}) {
         {brief}
       </a>
       <a
+        {...props}
         href={to}
         className={`sidebar-item-detail ${
           typeof window !== 'undefined'

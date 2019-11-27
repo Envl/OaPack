@@ -13,7 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd oa-react && npm start",
     "transpile": "babel vallina-js/src -d vallina-js/dist --out-files &&babel dev-index.js --out-file index.js && cd oa-react && npm run transpile",
-    "pub": "cd oa-react && npm run transpile && npm publish",
     "build": "cd oa-react && npm run build"
   },
   "repository": {

@@ -9,44 +9,11 @@
   visibility: hidden;
 }
 
-.sidebar-item-brief,
-.sidebar-item-detail {
-  width: 100%;
-  margin: 2px 0;
-  text-align: center;
-  text-decoration: none;
-  color: $thirdClr;
-}
-.sidebar-active {
-  // text-decoration: underline;
-  color: $primaryClr;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    transform: translateX(-12px);
-    top: calc(50% - 4px);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: $primaryClr;
-    z-index: 111;
-  }
-}
 .oa-sidebar {
-  .sidebar-item-brief,
-  .sidebar-item-detail {
-    color: $secondaryClr;
+  @include greater-than(768px) {
+    border-width: 0 1px 0 0;
+    top: 0;
   }
-  .sidebar-active {
-    color: $bgClr;
-    &::before {
-      background: $bgClr;
-    }
-  }
-}
-
-.oa-sidebar {
   @include transition-mid();
   z-index: 9999;
   border: none;
@@ -62,9 +29,6 @@
   justify-items: center;
   &:hover {
     width: 120px;
-    // & + .sidebar-placeholder {
-    //   margin-right: 110px;
-    // }
     .sidebar-item-detail {
       transition-duration: 0.3s;
       transition-property: opacity;
@@ -78,29 +42,42 @@
       display: none;
     }
   }
-  @include greater-than(768px) {
-    border-width: 0 1px 0 0;
-    top: 0;
-  }
   // children
-  .sidebar-active {
-    color: $bgClr !important;
-    &::before {
-      background: $bgClr !important;
-    }
+  .sidebar-item-brief,
+  .sidebar-item-detail {
+    margin: 2px 0;
+    text-align: center;
+    text-decoration: none;
+    color: $thirdClr;
   }
   .sidebar-item-detail {
     overflow: hidden;
     opacity: 0.2;
     height: 0px;
     width: 0px;
-    color: $secondaryClr;
   }
   .sidebar-item-brief {
-    color: $secondaryClr;
+    width: 100%;
     opacity: 1;
     @include greater-than(768px) {
       margin-left: 10px;
+    }
+  }
+
+  .sidebar-active {
+    // text-decoration: underline;
+    color: $primaryClr;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      transform: translateX(-12px);
+      top: calc(50% - 4px);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $primaryClr;
+      z-index: 111;
     }
   }
 }
