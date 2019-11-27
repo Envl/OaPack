@@ -8,8 +8,8 @@ const FilterGroup = props => {
   let pushedCounter = 0
   const [filterStatus, setFilterStatus] = useState(
     // turn Array into Dictionary
-    props.filters &&
-      props.filters.reduce((pre, cur) => {
+    props.initialFilters &&
+      props.initialFilters.reduce((pre, cur) => {
         const k = typeof cur === 'object' ? cur.name : cur
         const pushed = cur.pushed === undefined ? false : cur.pushed
         if (pushed) {
@@ -27,28 +27,6 @@ const FilterGroup = props => {
         return pre
       }, {}),
   )
-  useEffect(() => {
-    return (
-      props.filters &&
-      props.filters.reduce((pre, cur) => {
-        const k = typeof cur === 'object' ? cur.name : cur
-        const pushed = cur.pushed === undefined ? false : cur.pushed
-        if (pushed) {
-          pushedCounter++
-          if (props.single && pushedCounter >= 2) {
-            throw new Error(
-              'FilterGroup with "single" option can only have one filter pushed',
-            )
-          }
-        }
-        pre[k] = {
-          pushed: pushed,
-          disabled: cur.disabled === undefined ? false : cur.disabled,
-        }
-        return pre
-      }, {})
-    )
-  }, [props.filters])
   // console.debug(filterStatus)
 
   function callBack(title, evt) {
@@ -92,7 +70,7 @@ const FilterGroup = props => {
 }
 
 FilterGroup.propTypes = {
-  filters: PropTypes.array.isRequired,
+  initialFilters: PropTypes.array.isRequired,
   defaultIndex: PropTypes.number,
 }
 FilterGroup.defaultProps = {

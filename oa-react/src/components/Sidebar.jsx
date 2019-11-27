@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
-export function SidebarItem({brief, detail, to, className}) {
+export function SidebarItem({brief, detail, to, className, ...props}) {
   return (
     <>
       <a
+        {...props}
         href={to}
         className={`sidebar-item-brief  ${
           typeof window !== 'undefined'

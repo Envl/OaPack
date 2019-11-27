@@ -168,11 +168,11 @@ function App() {
         <Cards />
         <FilterGroup
           single
-          filters={[
+          initialFilters={[
             {name: 'Yes...', disabled: false},
             {name: 'we', disabled: true},
             'are..', // enabled by default
-            {name: 'Filters!', pushed: true},
+            {name: 'Filters!', pushed: false},
             'Click MEEE!!!!!!',
           ]}
           // defaultIndex/={0}
@@ -181,7 +181,7 @@ function App() {
         <FilterGroup
           onFilterUpdate={e => console.log(e)}
           className='oa-secret'
-          filters={[
+          initialFilters={[
             '中文',
             '字体',
             {name: '也', pushed: true},

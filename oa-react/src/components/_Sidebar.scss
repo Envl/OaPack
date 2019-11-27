@@ -1,5 +1,5 @@
 .element-with-sidebar {
-  flex-direction: row;
+  flex-direction: column;
   display: flex;
 }
 
@@ -48,7 +48,7 @@
 
 .oa-sidebar {
   @include transition-mid();
-  z-index: 1001;
+  z-index: 9999;
   border: none;
   background: $dark-bg;
   align-items: center;
@@ -111,7 +111,7 @@
     padding: 10px 1px;
     bottom: 100px;
     border-width: 1px 1px 1px 0;
-    border-radius: $comic-radius;
+    border-radius: 0 2px 3px 0;
     width: 30px;
     &:hover {
       width: 80px;

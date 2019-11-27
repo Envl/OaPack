@@ -1,10 +1,11 @@
+$cube-radius: 40px;
 .oa-cube {
   @include transition-mid();
   -webkit-font-smoothing: antialiased;
   // display: flex;
   // position: relative;
-  width: 100px;
-  height: 100px;
+  width: $cube-radius * 2;
+  height: $cube-radius * 2;
   // transform: rotate3d(1, 1, 1, -45deg);
   transform: rotateX(-25deg) rotateY(-45deg);
   margin: 40px 0;
@@ -71,27 +72,27 @@
 }
 .facet-l {
   // background: cadetblue;
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ($cube-radius);
 }
 .facet-r {
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ($cube-radius);
   // background: gray;
 }
 
 .facet-f {
-  transform: translateZ(50px);
+  transform: translateZ($cube-radius);
   // background: chocolate;
 }
 .facet-b {
-  transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ($cube-radius);
   // background: cornflowerblue;
 }
 
 .facet-u {
-  transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ($cube-radius);
   // background: rebeccapurple;
 }
 .facet-d {
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ($cube-radius);
   // background: yellow;
 }
