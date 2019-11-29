@@ -71,10 +71,6 @@ const FilterGroup = props => {
 
 FilterGroup.propTypes = {
   initialFilters: PropTypes.array.isRequired,
-  defaultIndex: PropTypes.number,
-}
-FilterGroup.defaultProps = {
-  defaultIndex: 0,
 }
 
 export default FilterGroup
