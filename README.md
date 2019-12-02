@@ -1,6 +1,8 @@
 # OaPack
 
-Oh! a package! which includes frequently used React UI Components [DEMO](https://situ.netlify.com)
+Oh! a package! which includes frequently used React UI Components  
+[DEMO](https://situ.netlify.com)  
+[npm package](https://www.npmjs.com/package/oapack)
 
 Enjoy it.
 
