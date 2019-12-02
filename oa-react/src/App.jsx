@@ -125,10 +125,6 @@ function App() {
 
               setTarget(elem)
             }
-            // lines.push([
-            //   {x: e.pageX, y: e.pageY},
-            //   {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-            // ])
           })
           setLines(lines)
         }}>
@@ -140,7 +136,7 @@ function App() {
         <Button type='toggle'>Laser Pointer</Button>
         <Button type='toggle'>Laser Pointer</Button>
         <div className='test'></div>
-        <Drawing lines={ls} />
+        {/* <Drawing lines={ls} /> */}
         <Test />
         <DropDown name='Down' onClick={e => console.log(e.target)}>
           <div>aaa</div>
