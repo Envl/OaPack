@@ -39,7 +39,7 @@ export function SidebarInjector({children, items, ...props}) {
         {items}
       </div>
       <div className='sidebar-placeholder'></div>
-      {children}
+      <div>{children}</div>
     </div>
   )
 }

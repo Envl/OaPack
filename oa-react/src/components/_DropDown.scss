@@ -1,6 +1,6 @@
 .dropdown-wrapper {
   z-index: 1000;
-  width: fit-content;
+  white-space: nowrap;
   text-transform: capitalize;
   position: relative;
   margin: 6px 0 0 4px; // fix
