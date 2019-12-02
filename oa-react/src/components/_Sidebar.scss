@@ -1,12 +1,11 @@
 .element-with-sidebar {
-  flex-direction: column;
   display: flex;
 }
 
 .sidebar-placeholder {
   @include transition-mid();
-  margin-right: 40px;
   visibility: hidden;
+  margin-right: 40px;
 }
 
 .oa-sidebar {
