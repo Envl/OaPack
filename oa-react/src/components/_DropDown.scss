@@ -24,6 +24,7 @@
 }
 .dropdown-title {
   @include control-basic();
+  font-weight: normal;
   margin: 0; //fix
   height: $height-xl; // fix
   padding-top: 0px; //fix
@@ -53,6 +54,7 @@
   }
 
   & > * {
+    font-weight: normal;
     text-transform: capitalize;
     background: white;
     padding: 10px 18px;

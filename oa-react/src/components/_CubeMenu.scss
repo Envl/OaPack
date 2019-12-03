@@ -20,7 +20,7 @@ $cube-radius: 40px;
   }
   &.hover-u {
     // transform: rotate3d(1, 0.1, 0.1, -80deg);
-    transform: rotateX(-90deg);
+    transform: rotateX(-90deg) rotateY(0deg);
     animation: 3s linear 0.7s infinite spinning;
   }
   &.hover-r {

@@ -83,6 +83,9 @@
 }
 
 @include smaller-than(768px) {
+  .element-with-sidebar {
+    flex-direction: column;
+  }
   .oa-sidebar {
     height: fit-content;
     padding: 10px 1px;
