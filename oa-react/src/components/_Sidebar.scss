@@ -87,6 +87,8 @@
     flex-direction: column;
   }
   .oa-sidebar {
+    transition-duration: 0.3s;
+    overflow: hidden;
     height: fit-content;
     padding: 10px 1px;
     bottom: 100px;
@@ -103,5 +105,8 @@
         display: none;
       }
     }
+  }
+  .thin-bar {
+    transform: translateX(-27px);
   }
 }
