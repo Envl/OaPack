@@ -2,7 +2,7 @@
 
 Oh! a package! which includes frequently used React UI Components  
 [DEMO](https://gnimoay.com/post/oapack)  
-[npm package](https://www.npmjs.com/package/oapack)
+[npm package](https://www.npmjs.com/package/OaPack)
 
 Enjoy it.
 
