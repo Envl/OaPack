@@ -1,7 +1,7 @@
 # OaPack
 
 Oh! a package! which includes frequently used React UI Components  
-[DEMO](https://gnimoay.com/post/oapack)  
+[DEMO](https://gnimoay.com/post/OaPack)  
 [npm package](https://www.npmjs.com/package/OaPack)
 
 Enjoy it.
