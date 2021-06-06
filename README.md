@@ -1,39 +1,41 @@
 # OaPack
 
-Oh! a package! which includes frequently used React UI Components  
-[DEMO](https://gnimoay.com/post/OaPack)  
-[npm package](https://www.npmjs.com/package/OaPack)
+Oh! a package! which includes frequently used React UI Components
+
+[DEMO](https://gnimoay.com/post/oapack)
+
+[npm package](https://www.npmjs.com/package/oapack)
 
 Enjoy it.
 
 ## Components
 
-Card  
+Card
 Button
 
-```
-<Button type='toggle'>BTN</Button>
+```js
+<Button type="toggle">BTN</Button>
 ```
 
-DropDown  
+DropDown
 FilterGroup (Multi-filter or Single filter):
 
 ```js
 <Filtergroup
   single
   initialFilters={[
-    {name: 'Yes...', disabled: false},
-    {name: 'we', disabled: false},
+    { name: 'Yes...', disabled: false },
+    { name: 'we', disabled: false },
     'are..', // enabled by default
-    {name: 'Filters!', pushed: false},
+    { name: 'Filters!', pushed: false },
     'Click MEEE!!!!!!',
   ]}
   onFilterUpdate={evt => console.log(evt)}
 />
 ```
 
-Carousel (it can contain anything)  
-CubeMenu  
+Carousel (it can contain anything)
+CubeMenu
 Sidebar
 
 ## Dev Dependencies

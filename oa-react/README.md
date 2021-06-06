@@ -1,37 +1,38 @@
 # OaPack
 
-Oh! a package! which includes frequently used React UI Components [DEMO](https://situ.netlify.com)
+Oh! a package! which includes frequently used React UI Components
+[DEMO](https://gnimoay.com/post/oapack)
 
 Enjoy it.
 
 ## Components
 
-Card  
+Card
 Button
 
 ```
 <Button type='toggle'>BTN</Button>
 ```
 
-DropDown  
+DropDown
 FilterGroup (Multi-filter or Single filter):
 
 ```js
 <Filtergroup
   single
   initialFilters={[
-    {name: 'Yes...', disabled: false},
-    {name: 'we', disabled: false},
+    { name: 'Yes...', disabled: false },
+    { name: 'we', disabled: false },
     'are..', // enabled by default
-    {name: 'Filters!', pushed: false},
+    { name: 'Filters!', pushed: false },
     'Click MEEE!!!!!!',
   ]}
   onFilterUpdate={evt => console.log(evt)}
 />
 ```
 
-Carousel (it can contain anything)  
-CubeMenu  
+Carousel (it can contain anything)
+CubeMenu
 Sidebar
 
 ## Dev Dependencies
