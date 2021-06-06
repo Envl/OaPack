@@ -1,35 +1,28 @@
 import './_index.scss'
 import './_App.scss'
 
-import React, {useState, useRef, useEffect} from 'react'
-import Button, {Card} from './components/Button'
+import Button, { Card } from './components/Button'
+import React, { useEffect, useRef, useState } from 'react'
+import { Sidebar, SidebarInjector, SidebarItem } from './components/Sidebar'
+
 import Carousel from './components/Carousel'
 import CubeMenu from './components/CubeMenu'
 import DropDown from './components/DropDown'
 import FilterGroup from './components/FilterGroup'
-import {SidebarInjector, Sidebar, SidebarItem} from './components/Sidebar'
-
-if (
-  typeof window !== 'undefined' &&
-  !document.head.querySelector('#fa-script')
-) {
-  const script = document.createElement('script')
-  script.src = 'https://use.fontawesome.com/releases/v5.11.2/js/all.js'
-  script.id = 'fa-script'
-  script.async = true
-  script.defer = true
-  document.head.appendChild(script)
-}
 
 function Cards() {
   return (
     <Card>
-      <Card className='ss'>
+      <Card className="ss">
         <Card>
           <Card onClick={() => console.log('second')}>
             <Card>
               <Button onClick={() => console.log('bttn')}>btn</Button>
             </Card>
+            <DropDown>
+              <li>1</li>
+              <li>2</li>
+            </DropDown>
           </Card>
         </Card>
       </Card>
@@ -37,14 +30,14 @@ function Cards() {
   )
 }
 
-function DrawingLine({line}) {
+function DrawingLine({ line }) {
   const pathData = 'M ' + line.map(p => p.x + ' ' + p.y).join(' L ')
   return <path d={pathData} />
 }
-function Drawing({lines}) {
+function Drawing({ lines }) {
   return (
     lines.length > 0 && (
-      <svg className='svg-lines'>
+      <svg className="svg-lines">
         {lines.map((line, index) => (
           <DrawingLine key={index} line={line} />
         ))}
@@ -58,7 +51,8 @@ function Test(props) {
   return (
     <button
       className={pressed ? 'btn-a' : 'btn-b'}
-      onClick={() => setPressed(!pressed)}>
+      onClick={() => setPressed(!pressed)}
+    >
       test
     </button>
   )
@@ -66,7 +60,7 @@ function Test(props) {
 function lineLen(line) {
   return Math.sqrt(
     (line[0].x - line[1].x) * (line[0].x - line[1].x) +
-      (line[0].y - line[1].y) * (line[0].y - line[1].y),
+      (line[0].y - line[1].y) * (line[0].y - line[1].y)
   )
 }
 function App() {
@@ -83,18 +77,20 @@ function App() {
       items={
         <>
           <SidebarItem
-            target='_blank'
-            to='/test'
-            brief='CV'
-            detail='CV'></SidebarItem>
-          <SidebarItem to='/' brief='P.' detail='Projects'></SidebarItem>
-          <SidebarItem to='/' brief='H.' detail='Home'></SidebarItem>
+            target="_blank"
+            to="/test"
+            brief="CV"
+            detail="CV"
+          ></SidebarItem>
+          <SidebarItem to="/" brief="P." detail="Projects"></SidebarItem>
+          <SidebarItem to="/" brief="H." detail="Home"></SidebarItem>
         </>
-      }>
+      }
+    >
       <div
         ref={ref}
-        className='App'
-        style={{display: 'flex'}}
+        className="App"
+        style={{ display: 'flex' }}
         onClick={e => {
           if (target && target.click) {
             console.log(target)
@@ -111,12 +107,12 @@ function App() {
             }
             const rect = elem.getBoundingClientRect()
             const ldist = [
-              {x: e.pageX, y: e.pageY},
-              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+              { x: e.pageX, y: e.pageY },
+              { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 },
             ]
             const ldraw = [
-              {x: e.clientX, y: e.clientY},
-              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
+              { x: e.clientX, y: e.clientY },
+              { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 },
             ]
             const newLen = lineLen(ldist)
             if (newLen < len) {
@@ -127,18 +123,19 @@ function App() {
             }
           })
           setLines(lines)
-        }}>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <div className='test'></div>
+        }}
+      >
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <Button type="toggle">Laser Pointer</Button>
+        <div className="test"></div>
         {/* <Drawing lines={ls} /> */}
         <Test />
-        <DropDown name='Down' onClick={e => console.log(e.target)}>
+        <DropDown name="Down" onClick={e => console.log(e.target)}>
           <div>aaa</div>
           <div>aaa</div>
           <div>aaa</div>
@@ -146,16 +143,18 @@ function App() {
         <Test />
         <Button
           onClick={() => console.log('ssss')}
-          test='aa'
-          className='sss'
-          style={{width: '100%'}}>
+          test="aa"
+          className="sss"
+          style={{ width: '100%' }}
+        >
           btn
         </Button>
         {/* use event.isToggleOn to check the status of toggle button */}
         <Button
           type={'toggle'}
           onClick={e => console.log(e.isToggleOn)}
-          disabled>
+          disabled
+        >
           disabled
         </Button>
         <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
@@ -169,10 +168,10 @@ function App() {
         <FilterGroup
           single
           initialFilters={[
-            {name: 'Yes...', disabled: false},
-            {name: 'we', disabled: true},
+            { name: 'Yes...', disabled: false },
+            { name: 'we', disabled: true },
             'are..', // enabled by default
-            {name: 'Filters!', pushed: false},
+            { name: 'Filters!', pushed: false },
             'Click MEEE!!!!!!',
           ]}
           // defaultIndex/={0}
@@ -180,17 +179,17 @@ function App() {
         />
         <FilterGroup
           onFilterUpdate={e => console.log(e)}
-          className='oa-secret'
+          className="oa-secret"
           initialFilters={[
             '中文',
             '字体',
-            {name: '也', pushed: true},
-            {name: '还行', pushed: true},
+            { name: '也', pushed: true },
+            { name: '还行', pushed: true },
             '吧',
           ]}
           // defaultIndex={0}
         />
-        <Button className='oa-secret'>测试</Button>
+        <Button className="oa-secret">测试</Button>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel. Mauris tempus
@@ -198,35 +197,35 @@ function App() {
           快来快来数一数, 二四六七八
         </p>
         <input
-          className='oa-input'
-          type='text'
-          placeholder='江南皮革厂倒闭了'
+          className="oa-input"
+          type="text"
+          placeholder="江南皮革厂倒闭了"
         />
-        <Carousel style={{height: '200px', width: '550px'}}>
-          <input type='text' placeholder='也可以这样' />
+        <Carousel style={{ height: '200px', width: '550px' }}>
+          <input type="text" placeholder="也可以这样" />
           <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
           <Card>
             <Card>
               <Card></Card>
             </Card>
           </Card>
-          <DropDown name='打开看看' onClick={e => console.log(e.target)}>
+          <DropDown name="打开看看" onClick={e => console.log(e.target)}>
             <div>A</div>
             <div>b</div>
             <div>c</div>
           </DropDown>
         </Carousel>
-        <Carousel className='oa-secret'>
+        <Carousel className="oa-secret">
           <h1>dd</h1>
         </Carousel>
         <CubeMenu
-          u='sdsg'
+          u="sdsg"
           l={
             <Card>
               <Card></Card>
             </Card>
           }
-          f='sdgds'
+          f="sdgds"
         />
       </div>
     </SidebarInjector>

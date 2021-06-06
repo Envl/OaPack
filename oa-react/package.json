@@ -1,6 +1,6 @@
 {
   "name": "oapack",
-  "version": "0.1.24",
+  "version": "0.1.31",
   "private": false,
   "main": "test.js",
   "peerDependencies": {
@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "transpile": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files  && babel _index.js --out-file index.js && sass ./src/_index.scss ./dist/index.css",
+    "transpile": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files  && babel _index.js --out-file index.js && node-sass ./src/_index.scss ./dist/index.css",
     "pub": "npm run transpile && npm publish"
   },
   "babel": {
