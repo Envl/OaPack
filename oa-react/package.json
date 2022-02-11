@@ -4,7 +4,7 @@
   "private": false,
   "main": "test.js",
   "peerDependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
   },
@@ -41,7 +41,7 @@
     "@babel/cli": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
